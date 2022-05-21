@@ -5,20 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mairie</title>
-  <link rel="stylesheet" href="./main/general.css">
+  <link rel="stylesheet" href="./main/styles/general.css">
 </head>
 <body>
 
   <!-- header section -->
+  <!-- header sec -->
   <header>
-    <p id="logo">M</p>
     <nav>
+      <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div>
       <ul>
-        <li class="item_1"><a href="#">Accueil</a></li>
-        <li class="item_2"><a href="#">Activité</a></li></li>
-        <li class="item_3"><a href="#">Contact</a></li></li>
+        <li class="links"><a href="#hero">Accueil</a></li>
+        <li class="links"><a href="#histoire">Histoire</a></li>
+        <li class="links"><a href="#conseil">Conseil Municipal</a></li>
+        <li class="links"><a href="#mission">Missions</a></li>
       </ul>
-      <button id="sign_in_up">Se connecter</button>
+        <button><a href="#">Sign In</a></button>
+     <!--  <div id="sign_in_up_container">
+        <button><a href="">Sign up</a></button>
+      </div> -->
     </nav>
   </header>
   <!-- end header section -->
@@ -29,22 +34,116 @@
     <!-- hero section -->
     <section id="hero">
       <div class="hero container">
-  
+        <h1 class="hero_title">Bienvenue Sur Le Site De La Mairie De</h1><h1 class="hero_title"><span class="mairie_name"> Yaoundé</span></h1>
       </div>
     </section>
     <!-- end hero section -->
   
     <!-- presentation section -->
-    <section id="presentation">
-      <div class="presentation container">
-
+    <section id="histoire">
+      <div class="histoire container">
+        <div class="hist_content">
+          <h2 class="title">Notre Histoire</h2>
+          <p class="hist_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore minima ratione temporibus magni voluptatum placeat maxime, qui earum nulla doloribus neque culpa harum deserunt mollitia necessitatibus ex explicabo, iste eos. neque culpa harum deserunt mollitia necessitatibus ex explicabo, iste eos. neque culpa harum deserunt mollitia necessitatibus ex explicabo, iste eos.</p>
+        </div>
       </div>
+      
     </section>
     <!-- end presentation section -->
 
-    <!-- activities section -->
-    <!-- end section -->
-    <!-- end activities section -->
+    <!-- conseil section -->
+    <section id="conseil">
+      <div class="conseil container">
+        <div class="conseil_descrip">
+          <h2 class="title">Le Conseil Municipal</h2>
+          <p>Notre conseil est constitué de <span id="nbr_membres">100</span> membres</p>
+        </div>
+        <div class="members">
+          
+          <div class="member">
+            <div class="mem_pic_cont">
+              <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
+            </div>
+            <div class="member_info">
+              <h3 class="member_name">John Smith</h3>
+              <h4 class="member_post">Président</h4>
+            </div>
+          </div>
+          <div class="member">
+            <div class="mem_pic_cont">
+              <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
+            </div>
+            <div class="member_info">
+              <h3 class="member_name">John Smith</h3>
+              <h4 class="member_post">Président</h4>
+            </div>
+          </div>
+          <div class="member">
+            <div class="mem_pic_cont">
+              <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
+            </div>
+            <div class="member_info">
+              <h3 class="member_name">John Smith</h3>
+              <h4 class="member_post">Président</h4>
+            </div>
+          </div>
+          <div class="member">
+            <div class="mem_pic_cont">
+              <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
+            </div>
+            <div class="member_info">
+              <h3 class="member_name">John Smith</h3>
+              <h4 class="member_post">Président</h4>
+            </div>
+          </div>
+          <div class="member">
+            <div class="mem_pic_cont">
+              <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
+            </div>
+            <div class="member_info">
+              <h3 class="member_name">John Smith</h3>
+              <h4 class="member_post">Président</h4>
+            </div>
+          </div>
+          
+         
+        </div>
+      </div>
+    </section>
+    <!-- conseil section -->
+
+    <!-- mission section -->
+    <section id="mission">
+      <div class="mission container">
+        <div class="missions_cont">
+          <h2 class="title">Notre Mission</h2>
+          <p class="missions_intro">Nous sommes compétents dans les domaines suivants :</p>
+          <div class="missons">
+            <ul>
+              <li>la création, l'entretien, la gestion des espaces verts, parcs et jardins communautaires ;</li>
+              <li>la gestion des lacs et rivières d'intérêt communautaire ;</li>
+              <li>le nettoiement des voies et espaces publics communautaires ;</li>
+              <li>le suivi et le contrôle de la gestion des déchets industriels ;</li>
+              <li>le nettoiement des voies et espaces publics communautaires ;</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end mission section -->
+    <!-- footer sec -->
+
+    <footer>
+      <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div>
+      <div class="site_info">
+        Copyright&copy; <script type="text/javascript">
+          document.write( new Date().getFullYear());
+          </script>  Mairie de <span class="mairie_name">Yaoundé</span>
+      </div>
+    </footer>
+
+    <!-- end footer sec -->
+    <script src="./main/js/general.js"></script>
   </main>
 </body>
 </html>
