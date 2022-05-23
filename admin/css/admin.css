@@ -51,11 +51,11 @@ p{
   left: 0;
   bottom: 0;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-items: spa;
   background: var(--primary_color);
   width: 220px;
-  padding: 150px 10px;
+  padding: 150px 0px;
   color: white;
   z-index: 10;
 }
@@ -69,13 +69,25 @@ p{
 
 
 /* sidebar sec */
-.side_bar a {
+
+.side_bar_link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+.side_bar_link a{
   font-size: 1.05rem;
   color: white;
   transition: all ease .7s;
+  width: 100%;
+  padding-left: 15px;
 }
 
-.side_bar a:hover{
-  color: var(--secondary_color);
+.side_bar_link a:hover{
+
+  background: crimson;
 }
 /* end sidebar sec */
