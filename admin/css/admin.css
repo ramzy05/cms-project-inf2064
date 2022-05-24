@@ -12,6 +12,7 @@
 :root{
   --primary_color:#475155;
   /* --secondary_color:#F9A826; */
+  --color : #497E91;
   --secondary_color: #dc143c;
   --gradient: linear-gradient(0deg, #55b88d 0%, var(--primary_color) 81%);
   --border:  1px solid red;
@@ -106,18 +107,115 @@ p{
   background: crimson;
 }
 
+.action{
+  cursor: pointer;
+  transition: all .6s ease;
+}
+.action:hover{
+  background: #a6afb3;
+}
+
+td.action a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 svg{
   width: 14px;
   height: 14px;
   fill: white;
 }
  svg + span{
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .content table svg{
-  fill: rgb(25, 172, 98);
+  fill: var(--secondary_color);
   width: 15px;
   height: 15px;
 }
 /* end sidebar sec */ 
+
+.ad_title{
+  color: var(--color);
+  text-transform: uppercase;
+}
+
+/* let's style form control */
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+ 
+  border: var(--border);
+}
+
+form .form_inp{
+ 
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  width: 100%;
+ /*  border: var(--border); */
+  padding-left: 20px;
+  margin-bottom: 25px;
+
+}
+
+
+.form_inp input, textarea{
+  width: 50%;
+  padding: 10px 7px 10px 7px;
+  background: rgba(231, 231, 231, 0.801);
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  font-size: 1em;
+ /*  padding: 10px 20px; */
+  outline: none;
+
+}
+
+.form_inp input:placeholder{
+  font-size: 15px;
+}
+.form_inp input:focus, textarea:focus{
+  border: 1px solid var(--color);
+}
+
+.form_inp label{
+  flex-basis: 20%;
+  color: var(--primary_color);
+  font-weight: 500;
+}
+
+
+form button{
+  /* bg */
+  background-image: linear-gradient(
+    to right, 
+    var(--primary_color) 0%, 
+    #6d909e 51%, 
+    var(--primary_color)  100%);
+  /* end bg */
+  padding: 8px 10px 8px 10px;
+  text-align: center;
+  background-size: 200%;
+  color: white;
+  font-size: .90em;
+  font-weight: 500;       
+  border:none;
+  transition: all .8s;
+}
+
+form .controls{
+  justify-content: center;
+}
+form button:hover{
+  background-position: right center;
+}
+/* end let's style form control */
