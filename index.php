@@ -24,9 +24,7 @@
           $result = mysqli_query($connexion, $q);
           $row = mysqli_fetch_assoc($result);
           echo $row['msg_welcome'];
-          /* while($row = mysqli_fetch_assoc($result)){
-            break;
-          } */
+          
     ?></h1><!-- <h1 class="hero_title"><span class="mairie_name"> Yaoundé</span></h1> -->
       </div>
     </section>

@@ -16,6 +16,17 @@
   --gradient: linear-gradient(0deg, #55b88d 0%, var(--primary_color) 81%);
   --border:  1px solid red;
 }
+
+table{
+  border-collapse:collapse;
+  border:1px solid #ccc;
+}
+
+td, th {
+  border:1px solid rgb(102, 101, 101);
+  padding:10px;
+}
+
 /* general */
 body{
   background: var(--primary_color);
@@ -63,6 +74,7 @@ p{
 
 /* content sec */
 .content{
+  display: flex;
   overflow: hidden;
 }
 /* end content sec */
@@ -94,13 +106,18 @@ p{
   background: crimson;
 }
 
-.side_bar_link svg{
+svg{
   width: 14px;
   height: 14px;
   fill: white;
 }
-
-.side_bar_link svg + span{
+ svg + span{
   margin-left: 10px;
+}
+
+.content table svg{
+  fill: rgb(25, 172, 98);
+  width: 15px;
+  height: 15px;
 }
 /* end sidebar sec */ 
