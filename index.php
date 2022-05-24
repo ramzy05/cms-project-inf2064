@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mairie</title>
-  <link rel="stylesheet" href="./css/general.css">
-</head>
-<body>
+<!-- head -->
+<?php require_once("./includes/head.php") ?>
+
+<!-- end head -->
 
   <!-- header section -->
-  <!-- header sec -->
-  <header>
-    <nav>
-      <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div>
-      <ul>
-        <li class="links"><a href="#hero">Accueil</a></li>
-        <li class="links"><a href="#histoire">Notre Histoire</a></li>
-        <li class="links"><a href="#conseil">Conseil Municipal</a></li>
-        <li class="links"><a href="#mission">Missions</a></li>
-      </ul>
-        <button><a href="./admin/index.html">Admin</a></button>
-     <!--  <div id="sign_in_up_container">
-        <button><a href="">Sign up</a></button>
-      </div> -->
-    </nav>
-  </header>
+  <?php require_once("./includes/header.php") ?>
+  
   <!-- end header section -->
   
   <!-- main  -->
@@ -131,19 +111,11 @@
       </div>
     </section>
     <!-- end mission section -->
-    <!-- footer sec -->
-
+    
   </main>
-  <footer>
-    <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div>
-    <div class="site_info">
-      Copyright&copy; <script type="text/javascript">
-        document.write( new Date().getFullYear());
-        </script>  Mairie de <span class="mairie_name">Yaoundé</span>
-    </div>
-  </footer>
+  
+  <!-- footer sec -->
+  <?php require_once("./includes/footer.php") ?>
 
   <!-- end footer sec -->
-  <script src="./main/js/general.js"></script>
-</body>
-</html>
+ 

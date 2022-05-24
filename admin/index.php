@@ -1,56 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mairie</title>
-  <link rel="stylesheet" href="../css/general.css">
-  <link rel="stylesheet" href="./css/admin.css">
-</head>
-<body>
+<?php require_once("../admin_includes/head.php") ?>
 
   <!-- header section -->
-  <!-- header sec -->
-  <header>
-    <nav>
-      <div class="logo"><a href="../index.html">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div>
-      <ul>
-        <li class="links"><a href="../index.html"">Voir le site</a></li>
-       <!--  <li class="links"><a href="#histoire">Histoire</a></li>
-        <li class="links"><a href="#conseil">Conseil Municipal</a></li>
-        <li class="links"><a href="#mission">Missions</a></li> -->
-      </ul>
-        <button><a href="#">Sign In</a></button>
-     <!--  <div id="sign_in_up_container">
-        <button><a href="">Sign up</a></button>
-      </div> -->
-    </nav>
-  </header>
+  <?php require_once("../admin_includes/header.php") ?>
   <!-- end header section -->
   
   <!-- main  -->
-  <section id="side_bar">
-    <div class="side_bar container">
-      <div class="menus">
-        <div class="side_bar_link">
-          <a href="#">Section Accueil</a>
-        </div>
-        <div class="side_bar_link">
-          <a href="#">Section Histoire</a>
-        </div>
-        <div class="side_bar_link">
-          <a href="#">Section Conseil</a>
-        </div>
-        <div class="side_bar_link">
-          <a href="#">Section Mission</a>
-        </div>
-      </div>
-    </div>
-  </section>
   <main>
-   
+    
     <!-- sidebar section -->
+    <?php require_once("../admin_includes/sidebar.php") ?>
     <!-- end sidebar section -->
   
     <!-- content section -->
@@ -75,7 +33,7 @@
     </div>
   </footer> -->
 
-  <!-- end footer sec -->
-  <script src="./main/js/general.js"></script>
-</body>
-</html>
+ <!-- footer sec -->
+ <?php require_once("../admin_includes/footer.php") ?>
+
+<!-- end footer sec -->
