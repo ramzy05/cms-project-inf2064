@@ -1,11 +1,23 @@
 <footer>
-    <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div>
+  <a href="#hero"><img src="./img/logo.svg" class="logo" alt=""></a>
     <div class="site_info">
       Copyright&copy; <script type="text/javascript">
         document.write( new Date().getFullYear());
-        </script>  Mairie de <span class="mairie_name">Yaoundé</span>
+
+        </script>  Mairie de <span class="mairie_name">
+           <?php require_once("./includes/db.php");
+      
+           $q = "SELECT * FROM identite ";
+           $result = mysqli_query($connexion, $q);
+           $row = mysqli_fetch_assoc($result);
+           echo $row['nom_mairie'];
+           /* while($row = mysqli_fetch_assoc($result)){
+             break;
+           } */
+     ?>
+          </span>
     </div>
 </footer>
-<script src="./main/js/general.js"></script>
+<script src="./js/general.js"></script>
 </body>
 </html>

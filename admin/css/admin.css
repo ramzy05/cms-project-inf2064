@@ -55,7 +55,7 @@ p{
   justify-items: spa;
   background: var(--primary_color);
   width: 220px;
-  padding: 150px 0px;
+  padding: 60px 0px;
   color: white;
   z-index: 10;
 }
@@ -79,6 +79,9 @@ p{
   
 }
 .side_bar_link a{
+  display: flex;
+  
+  align-items: center;
   font-size: 1.05rem;
   color: white;
   transition: all ease .7s;
@@ -90,4 +93,14 @@ p{
 
   background: crimson;
 }
-/* end sidebar sec */
+
+.side_bar_link svg{
+  width: 14px;
+  height: 14px;
+  fill: white;
+}
+
+.side_bar_link svg + span{
+  margin-left: 10px;
+}
+/* end sidebar sec */ 

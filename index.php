@@ -1,20 +1,33 @@
 <!-- head -->
-<?php require_once("./includes/head.php") ?>
+<?php require_once("./includes/head.php"); ?>
 
 <!-- end head -->
 
   <!-- header section -->
-  <?php require_once("./includes/header.php") ?>
+  <?php require_once("./includes/header.php"); ?>
   
   <!-- end header section -->
   
   <!-- main  -->
   <main>
+  <?php require_once("./includes/db.php"); ?>
+
     <!-- end main  -->
     <!-- hero section -->
     <section id="hero">
+
       <div class="hero container">
-        <h1 class="hero_title">Bienvenue Sur Le Site De La Mairie De</h1><h1 class="hero_title"><span class="mairie_name"> Yaoundé</span></h1>
+  
+        <h1 class="hero_title"> <?php 
+          /* echo ("onjour"); */
+          $q = "SELECT * FROM identite ";
+          $result = mysqli_query($connexion, $q);
+          $row = mysqli_fetch_assoc($result);
+          echo $row['msg_welcome'];
+          /* while($row = mysqli_fetch_assoc($result)){
+            break;
+          } */
+    ?></h1><!-- <h1 class="hero_title"><span class="mairie_name"> Yaoundé</span></h1> -->
       </div>
     </section>
     <!-- end hero section -->
@@ -39,7 +52,6 @@
           <p>Notre conseil est constitué de <span id="nbr_membres">100</span> membres</p>
         </div>
         <div class="members">
-          
           <div class="member">
             <div class="mem_pic_cont">
               <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
@@ -115,7 +127,7 @@
   </main>
   
   <!-- footer sec -->
-  <?php require_once("./includes/footer.php") ?>
+  <?php require_once("./includes/footer.php"); ?>
 
   <!-- end footer sec -->
  

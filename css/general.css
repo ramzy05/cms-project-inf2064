@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500&display=swap');
 
+/* importing fonts locally */
+/* @font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("/fonts/Roboto-Regular.eot?#iefix") format('embedded-opentype'),
+       url("/fonts/Roboto-Regular.woff2") format('woff2'),
+       url("/fonts/Roboto-Regular.woff") format('woff'),
+       url("/fonts/Roboto-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+} */
+
+/* end importing fonts locally */
 
 *, ::before,::after{
   margin: 0;
@@ -86,14 +99,14 @@ nav{
   
 }
 
-.logo{
+/* .logo{
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
   color: var(--primary_color);
-}
+} */
 
 
-.logo span{
+/* .logo span{
   color: var(--secondary_color);
 }
 .logo span:nth-of-type(1){
@@ -116,7 +129,15 @@ nav{
 .logo span:nth-of-type(5){
   font-size: 2.8rem;
   color: var(--primary_color);
+} */
+
+
+img.logo{
+  width: 40px;
+  height: 40px;
 }
+
+
 nav ul{
   
   display: flex;
@@ -337,7 +358,7 @@ footer{
   color: white;
 }
 
-footer .logo{
+/* footer .logo{
   color: white;
 }
 
@@ -345,5 +366,5 @@ footer .logo{
 footer .logo span:nth-of-type(3),
 footer .logo span:nth-of-type(2){
   color: white;
-}
+} */
 /* end footer sec */

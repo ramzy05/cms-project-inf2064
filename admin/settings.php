@@ -14,7 +14,12 @@
     <!-- content section -->
     <section id="content">
       <div class="content">
-     
+      <div class="left_sec">
+        
+      </div>
+      <div class="right_sec">
+        
+      </div>
      
       </div>
    
