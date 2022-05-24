@@ -149,8 +149,6 @@ form{
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
- 
-  border: var(--border);
 }
 
 form .form_inp{
