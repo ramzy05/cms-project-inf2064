@@ -16,7 +16,7 @@
       <div class="content">
       <form action="">
         <div class="form_inp">
-          <label for="nom_mairie">Nom de la mairie</label>
+          <label for="nom_mairie">Nom de la Mairie</label>
           <input type="text" name="msg_welc">
         </div>
         <div class="form_inp">
