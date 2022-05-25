@@ -1,6 +1,6 @@
 <header>
     <nav>
-    <a href="#hero"><img src="../img/logo.svg" alt="" class = "logo"></a>
+    <a href="../index.php#hero"><img src="../img/logo.svg" alt="" class = "logo"></a>
       <ul>
         <li class="links"><a href="../index.php">Voir le site</a></li>
        <!--  <li class="links"><a href="#histoire">Histoire</a></li>

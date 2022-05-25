@@ -4,6 +4,8 @@
 
   if($connexion){
     //echo "connexion is working";
+  }else{
+    //echo 'erreur de connexion';
   }
 
 

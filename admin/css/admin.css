@@ -196,11 +196,11 @@ form button{
   /* bg */
   background-image: linear-gradient(
     to right, 
-    var(--primary_color) 0%, 
-    #6d909e 51%, 
-    var(--primary_color)  100%);
+    var(--secondary_color) 0%, 
+    rgb(180, 17, 50) 51%, 
+    var(--secondary_color)  100%);
   /* end bg */
-  padding: 8px 10px 8px 10px;
+  padding: 8px 20px 8px 20px;
   text-align: center;
   background-size: 200%;
   color: white;
@@ -210,9 +210,9 @@ form button{
   transition: all .8s;
 }
 
-form .controls{
+/* form .controls{
   justify-content: center;
-}
+} */
 form button:hover{
   background-position: right center;
 }

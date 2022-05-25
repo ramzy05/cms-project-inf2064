@@ -137,6 +137,9 @@ img.logo{
   height: 40px;
 }
 
+.logo a{
+  cursor: pointer;
+}
 
 nav ul{
   
