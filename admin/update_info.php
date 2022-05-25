@@ -60,7 +60,7 @@
         echo("
         <script>
           window.setTimeout(function(){
-            window.location.href = './all_council_memb.php'
+            window.location.href = './settings.php'
           }, 500)
         </script>
         ");

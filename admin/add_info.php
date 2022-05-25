@@ -42,7 +42,7 @@
         <script>
           window.setTimeout(function(){
             window.location.href = './settings.php'
-          }, 5 00)
+          }, 500)
         </script>
         ");
         exit;

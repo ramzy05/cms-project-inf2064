@@ -8,7 +8,7 @@
   <?php 
   if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $q = "SELECT * FROM identite WHERE id ='$id'";
+    $q = "SELECT * FROM conseil WHERE id ='$id'";
     $result = mysqli_query($connexion, $q);
     $row = mysqli_fetch_assoc($result);
     $nom = $row['nom'];
@@ -22,7 +22,6 @@
     //add identity in db
     $nom_memb = $_POST['nom'];
     $poste_memb = $_POST['poste'];
-    $logo_name = '';
     $q = " UPDATE conseil SET nom='$nom_memb',
      poste='$poste_memb'
      WHERE id='$id'";
@@ -54,7 +53,7 @@
         </div>
         <div class="form_inp">
           <label for="nom">Poste</label>
-          <input type="text" name="nom" value="<?php echo $poste; ?>">
+          <input type="text" name="poste" value="<?php echo $poste; ?>">
         </div>
         <div class="form_inp controls">
           <button  name="update_btn" id="update_btn">Valider</button>
