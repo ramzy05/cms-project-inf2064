@@ -45,7 +45,6 @@
           }, 5 00)
         </script>
         ");
-        /* header('Location: http://localhost/mairie/admin'); */
         exit;
       }else{
         //add identity in db

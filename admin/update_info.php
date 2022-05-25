@@ -57,6 +57,14 @@
         }else{
           $result = mysqli_query($connexion, $q);
         }
+        echo("
+        <script>
+          window.setTimeout(function(){
+            window.location.href = './all_council_memb.php'
+          }, 500)
+        </script>
+        ");
+        exit;
   }
     
     
