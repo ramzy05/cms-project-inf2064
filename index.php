@@ -47,10 +47,29 @@
       <div class="conseil container">
         <div class="conseil_descrip">
           <h2 class="title">Le Conseil Municipal</h2>
-          <p>Notre conseil est constitué de <span id="nbr_membres">100</span> membres</p>
+          <?php 
+            /* echo ("onjour"); */
+              $q = "SELECT * FROM conseil ";
+              $num_row = mysqli_num_rows(mysqli_query($connexion, $q));
+              $result = mysqli_query($connexion, $q);
+             
+            
+            ?><p>Notre conseil est constitué de <span id="nbr_membres"><?php echo $num_row ?></h3></span> membres</p>
         </div>
         <div class="members">
+        <?php   while($row = mysqli_fetch_assoc($result)){
+        ?>
           <div class="member">
+            <div class="mem_pic_cont">
+              <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
+            </div>
+            <div class="member_info">
+              <h3 class="member_name"><?php echo $row['nom'] ?></h3>
+              <h4 class="member_post"><?php echo $row['poste'] ?></h4>
+            </div>
+          </div>
+          <?php    }?>
+          <!-- <div class="member">
             <div class="mem_pic_cont">
               <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
             </div>
@@ -85,16 +104,7 @@
               <h3 class="member_name">John Smith</h3>
               <h4 class="member_post">Président</h4>
             </div>
-          </div>
-          <div class="member">
-            <div class="mem_pic_cont">
-              <img src="./img/memb_pic.webp" alt="un membre de la commune" width="300">
-            </div>
-            <div class="member_info">
-              <h3 class="member_name">John Smith</h3>
-              <h4 class="member_post">Président</h4>
-            </div>
-          </div>
+          </div> -->
           
          
         </div>
