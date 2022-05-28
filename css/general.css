@@ -286,6 +286,7 @@ header button:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
+
 } 
 
 .conseil .member{
@@ -300,10 +301,12 @@ header button:hover {
   border: none;
   border-radius: 2px;
   box-shadow: 1px 2px 5px #497e91ca;
+  height: 372px;
 }
 
 .mem_pic_cont{
   overflow: hidden;
+  height: 70%;
 }
 .conseil img{
   object-fit: cover;
@@ -318,6 +321,7 @@ header button:hover {
 .conseil_descrip{
   text-align: center;
   margin-bottom: 20px;
+  height: 30%;
 }
 
 .conseil_descrip p #nbr_membres{

@@ -21,24 +21,34 @@
         <div class="left_sec">
           <table>
             <tr>
+              <th>N°</th>
               <th>Noms</th>
               <th>Poste</th>
+              <th>Photo</th>
               <th>Action</th>
             </tr>
             <!-- let load information from db -->
             <?php 
             /* echo ("onjour"); */
               $q = "SELECT * FROM conseil ";
-  
+              $i = 1;
               $result = mysqli_query($connexion, $q);
               while($row = mysqli_fetch_assoc($result)){
               ?>
               <tr>
                 <td>
+                <?php if($i<10) echo '0'.$i; 
+                      else echo $i; 
+                      $i++?>
+                </td>
+                <td>
                 <?php echo $row['nom'] ?>
                 </td>
                 <td>
                 <?php echo $row['poste'] ?>
+                </td>
+                <td>
+                <img src="./db_imgs/members_council/<?php echo $row['photo'] ?>" alt="" width="90" height="90">
                 </td>
                 <!-- edit and delete btn -->
                 <td class="action up_del">
@@ -63,6 +73,7 @@
               </tr>
             <?php }?>
             <tr>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td class="action">
