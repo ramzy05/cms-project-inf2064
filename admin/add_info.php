@@ -54,7 +54,7 @@
         $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo) VALUES('$nom_marie','$welc_msg','$logo_name')";
         if(!empty($_FILES)){
           $logo_name = $_FILES['logo']['name'];
-          $logo_ext = strtolower((strrchr($logo_name, '.')));
+          $logo_ext = ".".strtolower((strrchr($logo_name, '.')));
 
           $logo_tmp_name = $_FILES['logo']['tmp_name'];
           $dest = "./$logo_name";

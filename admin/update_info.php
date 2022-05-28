@@ -18,33 +18,39 @@
     
   /* update */
   if(isset($_POST['update_btn'])){
-
+    //echo $_POST['update_btn'];
     //add identity in db
-    $nom_marie = $_POST['nom_mairie'];
+    $nom_mairie = $_POST['nom_mairie'];
+   
     $welc_msg = $_POST['msg_welc'];
     $logo_name = '';
     $q = " UPDATE identite SET nom_mairie='$nom_mairie',
      msg_welcome='$welc_msg', logo='$logo'
      WHERE id='$id'";
+     var_dump($_FILES);
     if(!empty($_FILES)){
+      echo("
+      <script>
+        alert('bonjcccour');
+      </script>");
       $logo_name = $_FILES['logo']['name'];
       $logo_ext = strtolower((strrchr($logo_name, '.')));
-      var_dump($_FILES);
+      //var_dump($_FILES);
       $logo_tmp_name = $_FILES['logo']['tmp_name'];
       $dest = "./$logo_name";
+
       $q = " UPDATE identite SET nom_mairie='$nom_mairie',
        msg_welcome='$welc_msg', logo='$logo_name'
        WHERE id='$id'";
 
           if(in_array($logo_ext, array('.jpg', '.jpeg', '.png', '.webp'))){
             $save = move_uploaded_file($logo_tmp_name, $dest);
-            echo("
-        <script>
-         alert("."'erreu '+".$save.")
-        </script>");
-            $result = mysqli_query($connexion, $q);
+            $defaultquery = " UPDATE identite SET nom_mairie='$nom_mairie',
+            msg_welcome='$welc_msg', logo='$logo_name'
+            WHERE id='$id'";
+            $result = mysqli_query($connexion, $defaultquery);
             if($result){
-              //echo ('regist good');
+              echo ('regist good');
             }else{
               
               //echo 'regist error';
@@ -56,15 +62,25 @@
          
         }else{
           $result = mysqli_query($connexion, $q);
+          if($result){
+  //good
+    }else{
+            echo("
+            <script>
+       alert('not working');
+      </script>");
+          
+          }
         }
         echo("
-        <script>
-          window.setTimeout(function(){
-            window.location.href = './settings.php'
-          }, 500)
-        </script>
-        ");
-        exit;
+      <script>
+        window.setTimeout(function(){
+          window.location.href = './settings.php'
+        }, 500)
+      </script>
+      ");
+      exit;
+       
   }
     
     
@@ -80,7 +96,7 @@
       <form action="" method="POST">
         <div class="form_inp">
           <label for="nom_mairie">Nom de la mairie</label>
-          <input type="text" name="msg_welc" value="<?php echo $nom_mairie; ?>">
+          <input type="text" name="nom_mairie" value="<?php echo $nom_mairie; ?>">
         </div>
         <div class="form_inp">
           <label for="msg_welc">Message de bienvenue</label>
