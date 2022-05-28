@@ -13,7 +13,7 @@
       <h3 class="ad_title">Ajout des Informations</h3><br>
       
       <div class="content">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="add_info.php" method="POST" enctype="multipart/form-data">
           <div class="form_inp">
             <label for="nom_mairie">Nom de la Mairie</label>
             <input type="text" name="nom_mairie" required>
@@ -41,54 +41,64 @@
         echo("
         <script>
           window.setTimeout(function(){
-            window.location.href = './settings.php'
+            window.location.href = './update_info.php'
           }, 500)
         </script>
         ");
-        exit;
+        die;
       }else{
-        //add identity in db
-        $nom_marie = $_POST['nom_mairie'];
-        $welc_msg = $_POST['msg_welc'];
-        $logo_name = '';
-        $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo) VALUES('$nom_marie','$welc_msg','$logo_name')";
-        if(!empty($_FILES)){
-          $logo_name = $_FILES['logo']['name'];
-          $logo_ext = ".".strtolower((strrchr($logo_name, '.')));
-
-          $logo_tmp_name = $_FILES['logo']['tmp_name'];
-          $dest = "./$logo_name";
-          $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo) VALUES('$nom_marie','$welc_msg','$logo_name')";
-
-          if(in_array($logo_ext, array('.jpg', '.jpeg', '.png', '.webp'))){
-            $save = move_uploaded_file($logo_tmp_name, $dest);
-            echo("
-        <script>
-         alert("."'erreu '+".$save.")
-        </script>");
-            $result = mysqli_query($connexion, $q);
-            if($result){
-              //echo ('regist good');
-            }else{
-              
-              //echo 'regist error';
-            } 
-          }else{
-            //error
-            //echo 'error format';
+          //add identity in db
+          $nom_marie = $_POST['nom_mairie'];
+          $welc_msg = $_POST['msg_welc'];
+  
+          $q = "INSERT INTO identite (nom_mairie, msg_welcome) VALUES('$nom_marie','$welc_msg')";
+          if(!empty($_FILES)){
+  
+            
+            $logo_name = $_FILES['logo']['name'];
+            $logo_ext = strtolower(strrchr($logo_name, '.'));
+            $logo_tmp_name = $_FILES['logo']['tmp_name'];
+            
+            //$uniqueName = md5(uniqid(rand()), false);
+            $uniqueName = random_filename(50, $directory = '/db_imgs', $extension = substr($logo_ext, 0));
+            //$logo_name =$uniqueName . $logo_ext;
+            $logo_name =$uniqueName ;
+            
+            $destination = "db_imgs/". $logo_name;
+            
+            $isSaveInFolder = move_uploaded_file($logo_tmp_name, $destination);
+           
+            $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo) VALUES('$nom_marie','$welc_msg','$logo_name')";
+          
+            
+      
           }
-         
-        }else{
-          $result = mysqli_query($connexion, $q);
+          $isSaveInDb = mysqli_query($connexion, $q);
+          if($isSaveInDb){
+          }else{
+            echo("
+            <script>
+              window.setTimeout(function(){
+                window.location.href = './settings.php'
+              }, 500)
+            </script>
+            ");
+            die;
+            echo("
+              failed
+            ");
+  
+          }
+           
         }
+        /* echo("
+          <script>
+           
+              window.location.href = './settings.php';
+          </script>
+         "); */
+      
       }
-      /* echo("
-        <script>
-         
-            window.location.href = './settings.php';
-        </script>
-        "); */
-    }
   ?>
       </form>
     <!-- end content section -->

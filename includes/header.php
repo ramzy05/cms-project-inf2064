@@ -1,6 +1,14 @@
+<?php 
+            /* echo ("onjour"); */
+  $q = "SELECT * FROM identite ";
+  $result = mysqli_query($connexion, $q);
+  $row = mysqli_fetch_assoc($result);
+             
+            
+?>
 <header>
     <nav>
-    <a href="#hero"><img src="./img/logo.svg" alt="" class = "logo"></a>
+    <a href="../index.php#hero"><img src="admin/db_imgs/<?php echo $row['logo'] ; ?>" alt="" class = "logo"></a>
       <!-- <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div> -->
       <ul>
         <li class="links"><a href="#hero">Accueil</a></li>
