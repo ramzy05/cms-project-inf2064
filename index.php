@@ -54,7 +54,10 @@
               $result = mysqli_query($connexion, $q);
              
             
-            ?><p>Notre conseil est constitué de <span id="nbr_membres"><?php echo $num_row ?></h3></span> membres</p>
+            ?><p>Notre conseil est constitué de <span id="nbr_membres"><?php 
+             if($$num_row <10) echo '0'.$num_row ; 
+              else echo $num_row ; 
+             ?></h3></span> membres</p>
         </div>
         <div class="members">
         <?php   while($row = mysqli_fetch_assoc($result)){

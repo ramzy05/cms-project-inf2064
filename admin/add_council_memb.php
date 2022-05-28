@@ -15,7 +15,7 @@
       <div class="content">
         <form action="" method="POST" enctype="multipart/form-data">
           <div class="form_inp">
-            <label for="nom_memb">Noms</label>
+            <label for="nom_memb">Nom</label>
             <input type="text" name="nom_memb" required>
           </div>
           <div class="form_inp">
@@ -47,7 +47,7 @@
             $pic_tmp_name = $_FILES['memb_pic']['tmp_name'];
             
             //$uniqueName = md5(uniqid(rand()), false);
-            $uniqueName = random_filename(50, $directory = '/db_imgs', $extension = substr($pic_ext, 0));
+            $uniqueName = random_filename(50, $directory = '/db_imgs'.'/members_council', $extension = substr($pic_ext, 0));
             //$logo_name =$uniqueName . $logo_ext;
             $pic_name =$uniqueName ;
             
@@ -76,7 +76,7 @@
             echo("
             <script>
             window.setTimeout(function(){
-              window.location.href = './settings.php'
+              window.location.href = './all_council_memb.php'
             }, 500)
             </script>
             ");

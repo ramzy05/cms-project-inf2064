@@ -25,10 +25,10 @@
     <h3 class="ad_title">Modification des Informations</h3><br>
 
       <div class="content">
-      <form action="" method="POST">
+      <form action="" method="POST"  enctype="multipart/form-data">
         <div class="form_inp">
           <label for="nom_mairie">Nom de la mairie</label>
-          <input type="text" name="nom_mairie" value="<?php echo $nom; ?>">
+          <input type="text" name="nom_mairie" value="<?php echo $nom; ?>" required>
         </div>
         <div class="form_inp">
           <label for="msg_welc">Message de bienvenue</label>
@@ -46,9 +46,6 @@
           <button  name="update_btn" id="update_btn">Valider</button>
           <!-- <button type="submit">Annuler</button> -->
         </div>
-        <?php 
-        if($_POST) var_dump($_FILES); ?>
-        
       </form>
     </div>
     
@@ -100,7 +97,7 @@
           $result = mysqli_query($connexion, $defaultquery);
     }
         if($result){
-/* 
+
           echo("
         <script>
           window.setTimeout(function(){
@@ -108,7 +105,7 @@
           }, 500)
         </script>
         ");
-        die; */
+        die;
       }
        
   }
@@ -118,5 +115,5 @@
     ?>
 
 
-<script src= "./js/add_up_info.js"></script> 
+<script src= "./js/add_up_data.js"></script> 
 <?php require_once("./includes/footer.php") ?>
