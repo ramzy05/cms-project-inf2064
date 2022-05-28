@@ -42,7 +42,7 @@
           
           if(!empty($_FILES['memb_pic']["tmp_name"])){
             
-            var_dump($_FILES);
+         
             $pic_name = $_FILES['memb_pic']['name'];
             $pic_ext = strtolower(strrchr($pic_name, '.'));
             $pic_tmp_name = $_FILES['memb_pic']['tmp_name'];
@@ -74,14 +74,14 @@
           
           if($isSaveInDb){
             
-         /*  echo("
+         echo("
             <script>
             window.setTimeout(function(){
               window.location.href = './all_council_memb.php'
             }, 500)
             </script>
             ");
-            die; */
+            die;
             
           }
           
