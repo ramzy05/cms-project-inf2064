@@ -71,7 +71,7 @@
  
     $result = '';
    
-    if(!empty($_FILES)){
+    if(!empty($_FILES['logo']["tmp_name"])){
        
       $logo_name = $_FILES['logo']['name'];
       $logo_ext = strtolower(strrchr($logo_name, '.'));

@@ -39,9 +39,10 @@
           $nom_memb = $_POST['nom_memb'];
           $poste_memb = $_POST['poste_memb'];
           
-          if(!empty($_FILES)){
+          
+          if(!empty($_FILES['memb_pic']["tmp_name"])){
             
-            
+            var_dump($_FILES);
             $pic_name = $_FILES['memb_pic']['name'];
             $pic_ext = strtolower(strrchr($pic_name, '.'));
             $pic_tmp_name = $_FILES['memb_pic']['tmp_name'];
@@ -49,11 +50,11 @@
             //$uniqueName = md5(uniqid(rand()), false);
             $uniqueName = random_filename(50, $directory = '/db_imgs'.'/members_council', $extension = substr($pic_ext, 0));
             //$logo_name =$uniqueName . $logo_ext;
-            $pic_name =$uniqueName ;
+
+            $pic_name = $uniqueName ;
             
             $destination = "db_imgs/members_council/". $pic_name;
             
-            $isSaveInFolder = move_uploaded_file($pic_tmp_name, $destination);
 
             $q = "INSERT INTO conseil (nom, poste, photo) VALUES('$nom_memb','$poste_memb','$pic_name')";
             
@@ -61,7 +62,7 @@
 
             if($isSaveInDb){
           
-              $isSaveInFolder = move_uploaded_file($logo_tmp_name, $destination);
+              $isSaveInFolder = move_uploaded_file($pic_tmp_name, $destination);
             }
      
             
@@ -73,30 +74,18 @@
           
           if($isSaveInDb){
             
-            echo("
+         /*  echo("
             <script>
             window.setTimeout(function(){
               window.location.href = './all_council_memb.php'
             }, 500)
             </script>
             ");
-            die;
+            die; */
             
           }
           
-          
         
-
-          $q = "INSERT INTO conseil (nom, poste) VALUES('$nom_memb','$poste_memb')";
-          $result = mysqli_query($connexion, $q);
-          echo("
-          <script>
-            window.setTimeout(function(){
-              window.location.href = './all_council_memb.php'
-            }, 500)
-          </script>
-          ");
-          exit;
         }
 
       /* echo("
@@ -106,7 +95,7 @@
         </script>
         "); */
     }
-  ?>
+ ?>
       </form>
     <!-- end content section -->
     </div>

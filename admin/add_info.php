@@ -51,7 +51,7 @@
           $nom_marie = $_POST['nom_mairie'];
           $welc_msg = $_POST['msg_welc'];
   
-          if(!empty($_FILES)){
+          if(!empty($_FILES['logo']["tmp_name"])){
             
             
             $logo_name = $_FILES['logo']['name'];

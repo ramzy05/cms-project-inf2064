@@ -73,7 +73,7 @@
  
     $result = '';
    
-    if(!empty($_FILES)){
+    if(!empty($_FILES['photo']["tmp_name"])){
        
       $photo_name = $_FILES['photo']['name'];
       $photo_ext = strtolower(strrchr($photo_name, '.'));
