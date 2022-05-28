@@ -8,7 +8,10 @@
 ?>
 <header>
     <nav>
-    <a href="../index.php#hero"><img src="./db_imgs/<?php echo $row['logo'] ;?>" alt="" class = "logo"></a>
+    <div class="logo_cont">
+      <a href="../index.php#hero"><img src="./db_imgs/<?php echo $row['logo'] ;?>" alt="" class = "logo"></a>
+      <h4 class="nom_mairie"><?php echo $row['nom_mairie'] ;?></h4>
+    </div>
       <ul>
         <li class="links"><a href="../index.php">Voir le site</a></li>
        <!--  <li class="links"><a href="#histoire">Histoire</a></li>

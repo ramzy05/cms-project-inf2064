@@ -8,7 +8,10 @@
 ?>
 <header>
     <nav>
-    <a href="../index.php#hero"><img src="admin/db_imgs/<?php echo $row['logo'] ; ?>" alt="" class = "logo"></a>
+    <div class="logo_cont">
+      <a href="../in dex.php#hero"><img src="admin/db_imgs/<?php echo $row['logo'] ; ?>" alt="" class = "logo"></a>
+      <h4 class="nom_mairie"><?php echo $row['nom_mairie'] ;?></h4>
+    </div>
       <!-- <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div> -->
       <ul>
         <li class="links"><a href="#hero">Accueil</a></li>

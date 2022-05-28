@@ -22,6 +22,10 @@
             <label for="poste_memb">Poste</label>
             <input type="text" name="poste_memb" required>
           </div>
+          <div class="form_inp">
+            <label for="memb_pic">Poste</label>
+            <input type="file" name="memb_pic" >
+          </div>
           <div class="form_inp controls">
             <button  name="add_btn" id="add_btn">Valider</button>
             <!-- <button type="cancel" name="cancel">Annuler</button> -->
@@ -34,7 +38,12 @@
 
           $nom_memb = $_POST['nom_memb'];
           $poste_memb = $_POST['poste_memb'];
+          
+          
+          
+          
         
+
           $q = "INSERT INTO conseil (nom, poste) VALUES('$nom_memb','$poste_memb')";
           $result = mysqli_query($connexion, $q);
           echo("

@@ -51,9 +51,8 @@
           $nom_marie = $_POST['nom_mairie'];
           $welc_msg = $_POST['msg_welc'];
   
-          $q = "INSERT INTO identite (nom_mairie, msg_welcome) VALUES('$nom_marie','$welc_msg')";
           if(!empty($_FILES)){
-  
+            
             
             $logo_name = $_FILES['logo']['name'];
             $logo_ext = strtolower(strrchr($logo_name, '.'));
@@ -67,29 +66,37 @@
             $destination = "db_imgs/". $logo_name;
             
             $isSaveInFolder = move_uploaded_file($logo_tmp_name, $destination);
-           
-            $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo) VALUES('$nom_marie','$welc_msg','$logo_name')";
-          
             
-      
-          }
-          $isSaveInDb = mysqli_query($connexion, $q);
-          if($isSaveInDb){
+            $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo) VALUES('$nom_marie','$welc_msg','$logo_name')";
+            
+            $isSaveInDb = mysqli_query($connexion, $q);
+
+            if($isSaveInDb){
+          
+              $isSaveInFolder = move_uploaded_file($logo_tmp_name, $destination);
+            }
+     
+            
           }else{
+
+            $qDefault = "INSERT INTO identite (nom_mairie, msg_welcome) VALUES('$nom_marie','$welc_msg')";
+            $isSaveInDb = mysqli_query($connexion, $qDefault);
+          }
+          
+          if($isSaveInDb){
+            
             echo("
             <script>
-              window.setTimeout(function(){
-                window.location.href = './settings.php'
-              }, 500)
+            window.setTimeout(function(){
+              window.location.href = './settings.php'
+            }, 500)
             </script>
             ");
             die;
-            echo("
-              failed
-            ");
-  
+            
           }
-           
+          
+          
         }
         /* echo("
           <script>

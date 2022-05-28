@@ -1,9 +1,5 @@
 <?php 
 
-function getNameAndExtOfFile($fichier){
-
-}
-
 
 function random_filename($length, $directory = '', $extension = '')
 {
@@ -21,5 +17,17 @@ function random_filename($length, $directory = '', $extension = '')
 
     return $key . (!empty($extension) ? '.' . $extension : '');
 }
+
+/* function getLogo(){
+  
+            /* echo ("onjour"); 
+  $q = "SELECT * FROM identite ";
+  $result = mysqli_query($connexion, $q);
+  $row = mysqli_fetch_assoc($result);
+   
+  return $row['logo'] | 'default_logo.png';
+  
+
+} */
 
 ?>

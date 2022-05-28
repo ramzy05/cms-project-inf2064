@@ -132,6 +132,16 @@ nav{
 } */
 
 
+.logo_cont{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo_cont .nom_mairie{
+  color: var(--secondary_color);
+  text-transform: uppercase;
+}
 img.logo{
   width: 40px;
   height: 40px;
