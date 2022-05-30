@@ -13,30 +13,21 @@
       if(isset($_GET['id_perso'])){
         $id = $_GET['id_perso'];
         $nom = $_GET['nom_perso'];
-        $q = "SELECT * FROM identite WHERE id ='$id'";
-        $result = mysqli_query($connexion, $q);
-        $row = mysqli_fetch_assoc($result);
-        $nom = $row['nom_mairie'];
-        $msg = $row['msg_welcome'];
-        $old_logo = $row['logo'];  
       }
     ?>
     <section id="content">
       <h3 class="ad_title">Ajout d'une étape du parcours</h3><br>
       
       <div class="content">
-        <form action="" method="POST">
+        <form action="add_parcours.php" method="POST">
+          <input type="text" value="<?php echo $id ?>" name="id_perso" style="display: none;">
+          <input type="text" value="<?php echo $nom ?>" name="nom_perso" style="display: none;">
           <div class="form_inp">
-            <label for="nom_perso">No</label>
-            <input type="text" name="nom_perso" required>
+            <label>Nom du personnel: <?php echo $nom ?></label>
           </div>
           <div class="form_inp">
-            <label for="fonction_perso">fonction</label>
-            <input type="text" name="fonction_perso" required>
-          </div>
-          <div class="form_inp">
-            <label for="perso_pic">Photo</label>
-            <input type="file" name="perso_pic" >
+            <label for="description">Description</label>
+            <textarea name="description" id="" cols="30" rows="10" required></textarea>
           </div>
           <div class="form_inp controls">
             <button  name="add_btn" id="add_btn">Valider</button>
@@ -44,59 +35,33 @@
           </div>
          
           <?php 
-    if(isset($_POST['add_btn']) ){
+
+      if(isset($_POST['add_btn']) ){
+       
         //add identity in db
-        if(!empty($_POST['nom_perso'] && !empty($_POST['fonction_perso']))){
+        if(!empty($_POST['description'])){
 
-          $nom_perso = $_POST['nom_perso'];
-          $fonction_perso = $_POST['fonction_perso'];
-          
-          
-          if(!empty($_FILES['perso_pic']["tmp_name"])){
-            
+          $description= $_POST['description'];
+          $id_perso= $_POST['id_perso'];
          
-            $pic_name = $_FILES['perso_pic']['name'];
-            $pic_ext = strtolower(strrchr($pic_name, '.'));
-            $pic_tmp_name = $_FILES['perso_pic']['tmp_name'];
-            
-            //$uniqueName = md5(uniqid(rand()), false);
-            $uniqueName = random_filename(50, $directory = '/db_files'.'/personnel'.'/imgs', $extension = substr($pic_ext, 0));
-            //$logo_name =$uniqueName . $logo_ext;
-
-            $pic_name = $uniqueName ;
-            
-            $destination = "db_files/personnel/imgs/". $pic_name;
-            
-
-            $q = "INSERT INTO conseil (nom, fonction, photo) VALUES('$nom_perso','$fonction_perso','$pic_name')";
-            
-         $isSaveInDb = mysqli_query($connexion, $q); 
-
-            if($isSaveInDb){
+      
+        
+          $q = "INSERT INTO parcours (id_personnel, descriptions) VALUES('$id_perso','$description')";
+          $isSaveInDb = mysqli_query($connexion, $q);
           
-              $isSaveInFolder = move_uploaded_file($pic_tmp_name, $destination);
-            }
-     
-            
-        }else{
-
-            $qDefault = "INSERT INTO personnel (nom, fonction) VALUES('$nom_perso','$fonction_memb')";
-            $isSaveInDb = mysqli_query($connexion, $qDefault);
-          }
           
           if($isSaveInDb){
             
-         echo("
+            echo("
             <script>
             window.setTimeout(function(){
-              window.location.href = './all_personnel.php'
+              window.location.href = './parcours.php?id_perso=".$_POST['id_perso']."&nom_perso=".$_POST['nom_perso']."'
             }, 500)
             </script>
             ");
             die;
             
           }
-          
         
         }
 

@@ -52,7 +52,7 @@
                 <img src="./db_files/personnel/imgs/<?php echo $row['photo'] ?>" alt="" width="90" height="90">
                 </td>
                 <td>
-                  <a href="./parcours.php?id_perso=<?php echo $row['id'] ?>" style="color: #497E91; font-size: 1.2rem;">Voir plus...</a>
+                  <a href="./parcours.php?id_perso=<?php echo $row['id'] ?>&nom_perso=<?php echo $row['nom'] ?>" style="color: #497E91; font-size: 1.2rem;">Voir plus...</a>
                 </td>
                 <!-- edit and delete btn -->
                 <td class="action up_del">
