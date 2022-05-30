@@ -93,7 +93,7 @@
               $result = mysqli_query($connexion, $q);
              
             
-            ?><p>Notre conseil est constitué de <span id="nbr_membres"><?php 
+            ?><p>Notre personnel est constitué de <span id="nbr_membres"><?php 
              if($$num_row <10) echo '0'.$num_row ; 
               else echo $num_row ; 
              ?></h3></span> employés</p>
@@ -111,7 +111,7 @@
             <div class="member_info">
               <h3 class="member_name"><?php echo $row['nom'] ?></h3>
               <h4 class="member_post"><?php echo $row['fonction'] ?></h4>
-              <h4 ><a href="#" class="see_more">Voir Plus...</a></h4>
+              <h4 ><a href="./see_more_person.php?id=<?php echo $row['id'] ?>" class="see_more">Voir Plus...</a></h4>
             </div>
           </div>
           <?php $number++;   }?>

@@ -23,7 +23,7 @@
           <input type="text" value="<?php echo $id ?>" name="id_perso" style="display: none;">
           <input type="text" value="<?php echo $nom ?>" name="nom_perso" style="display: none;">
           <div class="form_inp">
-            <label>Nom de l'employé: <?php echo $nom ?></label>
+            <label><?php echo $nom; ?></label>
           </div>
           <div class="form_inp">
             <label for="description">Description</label>

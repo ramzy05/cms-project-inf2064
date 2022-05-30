@@ -15,11 +15,26 @@
     $fonction = $row['fonction'];
     $old_photo = $row['photo'];
 
+  }  if(!empty($_GET['id'])){
+    $id = $_GET['id'];
+    $nom = $_GET['nom_perso'];
+    $id_perso = $_GET['id_perso'];
+    $descript = $_GET['description'];
   }
+  else if(!empty($_POST)){
+
+    }else{
+    echo("
+    <script>
+    window.setTimeout(function(){
+      window.location.href = './all_personnel.php'
+    }, 500)
+    </script>
+    ");
+    die;
+ }
+   ?>
     
-    
-    
-    ?>
     
   <main>
   <?php require_once("./includes/sidebar.php"); ?>

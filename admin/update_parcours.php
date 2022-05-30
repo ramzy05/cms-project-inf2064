@@ -14,7 +14,7 @@
      $id_perso = $_GET['id_perso'];
      $descript = $_GET['description'];
    }
-   if(!empty($_POST)){
+   else if(!empty($_POST)){
 
   }else{
     echo("
