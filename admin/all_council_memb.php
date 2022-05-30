@@ -109,7 +109,7 @@ if(isset($_GET['id'])){
     </script>
     ");
     die;
-  }
+  }else echo('echec');
 
 }
   

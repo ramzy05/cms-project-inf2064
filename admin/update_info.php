@@ -106,7 +106,7 @@
         </script>
         ");
         die;
-      }
+      }else echo('echec');
        
   }
     

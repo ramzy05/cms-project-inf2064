@@ -5,117 +5,111 @@
   <!-- end header section -->
   
 
-  <?php 
-  if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $q = "SELECT * FROM personnel WHERE id ='$id'";
-    $result = mysqli_query($connexion, $q);
-    $row = mysqli_fetch_assoc($result);
-    $nom = $row['nom'];
-    $fonction = $row['fonction'];
-    $old_photo = $row['photo'];
+    <?php 
+       if(!empty($_GET['id_perso']) && !empty($_GET['perso_nom'])){
+        $id = $_GET['id_perso'];
+        $nom = $_GET['perso_nom'];
+        
+      }else{
+        if(!empty($_POST)){
 
-  }
-    
-    
+        }else{
+          echo("
+          <script>
+          window.setTimeout(function(){
+            window.location.href = './all_cv.php'
+          }, 500)
+          </script>
+          ");
+          die;
+        }
+      }
     
     ?>
-    
   <main>
-  <?php require_once("./includes/sidebar.php"); ?>
-  <section id="content">
-    <h3 class="ad_title">Modification d'un membre</h3><br>
-
+    <!-- sidebar section -->
+    <?php require_once("./includes/sidebar.php"); ?>
+    <!-- end sidebar section -->
+    <section id="content">
+      <h3 class="ad_title">Modifier le cv</h3><br>
+      
+      <h3 >Employé: <span style="color: #497E91; font-size:1.1rem"><?php echo $nom; ?></span></h3><br>
       <div class="content">
-      <form action="" method="POST" enctype="multipart/form-data">
-        <div class="form_inp">
-          <label for="nom">Nom</label>
-          <input type="text" name="nom" value="<?php echo $nom; ?>" required>
-        </div>
-        <div class="form_inp">
-          <label for="fonction">Fonction</label>
-          <input type="text" name="fonction" value="<?php echo $fonction; ?>">
-        </div>
-        <div class="form_inp">
-        <label >Photo actuel</label>
-         <img src="../admin/db_files/personnel/imgs/<?php echo $old_photo; ?>" alt="" width="90" height="90">
-        </div>
-        <div class="form_inp">
-          <label for="photo">Nouvelle Photo</label>
-          <input type="file" name="photo">
-        </div>
-        <div class="form_inp controls">
-          <button  name="update_btn" id="update_btn">Valider</button>
-          <!-- <button type="submit">Annuler</button> -->
-        </div>
+        <form action="add_cv.php" method="POST" enctype="multipart/form-data">
+          <input name="perso_id"  value=" <?php echo $id; ?>" style="display: none;">
+          <input name="perso_nom"  value=" <?php echo $nom; ?>" style="display: none;">
+         
+          <div class="form_inp">
+            <label for="perso_cv">Nouveau cv</label>
+            <input type="file" name="perso_cv" >
+          </div>
+          <div class="form_inp controls">
+            <button  name="add_btn" id="add_btn">Valider</button>
+            <!-- <button type="cancel" name="cancel">Annuler</button> -->
+          </div>
+         
+          <?php 
+      if(isset($_POST['add_btn'])){
+        //add identity in db
+
+        if(!empty($_POST['perso_id']) && !empty($_FILES['perso_cv']['tmp_name'])){
+          
+          $perso_id = $_POST['perso_id'];         
+          
+            $cv_name = $_FILES['perso_cv']['name'];
+            $cv_ext = strtolower(strrchr($cv_name, '.'));
+            $cv_tmp_name = $_FILES['perso_cv']['tmp_name'];
+            
+            //$uniqueName = md5(uniqid(rand()), false);
+            $uniqueName = random_filename(50, $directory = '/db_files'.'/personnel'.'/cv', $extension = substr($cv_ext, 0));
+            //$logo_name =$uniqueName . $logo_ext;
+            
+            $cv_name = $uniqueName ;
+            
+            $destination = "db_files/personnel/cv/". $cv_name;
+            
+            $q = " UPDATE personnel SET cv='$cv_name'
+            WHERE id='$perso_id'";
+ 
+            
+            $isSaveInDb = mysqli_query($connexion, $q); 
+
+            if($isSaveInDb){
+          
+              $isSaveInFolder = move_uploaded_file($cv_tmp_name, $destination);
+              if($isSaveInFolder){
+                echo("
+                <script>
+                window.setTimeout(function(){
+                  window.location.href = './all_cv.php'
+                }, 500)
+                </script>
+                ");
+                die;
+              }else echo('echec');
+            }
+     
+            
+      
+          
+
+      /* echo("
+        <script>
+         
+            window.location.href = './settings.php';
+        </script>
+        "); */
+      }
+    }
+   
+ ?>
       </form>
+    <!-- end content section -->
     </div>
     
   </section>
-    <!-- end content section -->
 
-    <!-- footer sec -->
-  
 </main>
 
-<?php 
-  /* update */
-  if(isset($_POST['update_btn'])){
-    //echo $_POST['update_btn'];
-    //add identity in db
-    $nom = $_POST['nom'];
-   
-    $fonction = $_POST['fonction'];
-    $photo_name = '';
-    $defaultquery = " UPDATE personnel SET nom='$nom',
-     fonction='$fonction'
-     WHERE id='$id'";
- 
-    $result = '';
-   
-    if(!empty($_FILES['photo']["tmp_name"])){
-       
-      $photo_name = $_FILES['photo']['name'];
-      $photo_ext = strtolower(strrchr($photo_name, '.'));
-      $photo_tmp_name = $_FILES['photo']['tmp_name'];
-      
-      //$uniqueName = md5(uniqid(rand()), false);
-      $uniqueName = random_filename(50, $directory = '/db_files'.'/personnel'.'/imgs', $extension = substr($photo_ext, 0));
-      //$photo_name =$uniqueName . $photo_ext;
-      $photo_name = $uniqueName ;
-      
-      $destination = "/admin/db_files/personnel/imgs/". $photo_name;
-      
-      
-      $q = " UPDATE personnel SET nom='$nom',
-      fonction='$fonction', photo='$photo_name'
-       WHERE id='$id'";
-      $result = mysqli_query($connexion, $q);
-      if($result){
-          $isSaveInFolder = move_uploaded_file($photo_tmp_name, $destination);
-      }
-          
-    }else{
-          $result = mysqli_query($connexion, $defaultquery);
-    }
-        if($result){
-
-          echo("
-        <script>
-          window.setTimeout(function(){
-            window.location.href = './all_personnel.php'
-          }, 500)
-        </script>
-        ");
-        die; 
-      }
-       
-  }
-    
-    
-    
-    ?>
-
-
-<script src= "./js/add_up_data.js"></script> 
+<script src= "./js/add_up_info.js"></script> 
 <?php require_once("./includes/footer.php") ?>

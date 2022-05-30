@@ -13,17 +13,19 @@
      $nom = $_GET['nom_perso'];
      $id_perso = $_GET['id_perso'];
      $descript = $_GET['description'];
-   }/* else{
+   }
+   if(!empty($_POST)){
+
+  }else{
     echo("
     <script>
-      window.setTimeout(function(){
-        window.location.href = './all_personnel.php'
-      }, 500)
+    window.setTimeout(function(){
+      window.location.href = './all_personnel.php'
+    }, 500)
     </script>
     ");
     die;
-   } */
-
+  }
     ?>
     
   <main>
@@ -36,7 +38,7 @@
       <input type="text" value="<?php echo $id_perso; ?>" name="id_perso" style="display: none;">
       <input type="text" value="<?php echo $nom; ?>" name="nom_perso" style="display: none;">
       <div class="form_inp">
-        <label>Nom du personnel: <?php echo $nom; ?></label>
+        <label>Nom de l'employé: <?php echo $nom; ?></label>
       </div>
       <div class="form_inp">
         <label for="description">Description</label>
@@ -51,7 +53,6 @@
   if(isset($_POST['update_btn'])){
     //echo $_POST['update_btn'];
     //add identity in db
-    var_dump($_SESSION);
     if(!empty($_POST['description'])){
       $description = $_POST['description'];
       $id= $_POST['id_parcours'];
@@ -69,7 +70,7 @@
           </script>
           ");
         die;
-      }
+      }else echo('echec');
     }
    
   

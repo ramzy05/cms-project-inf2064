@@ -26,6 +26,7 @@ table{
 td, th {
   border:1px solid rgb(102, 101, 101);
   padding:10px;
+  text-align: center;
 }
 
 /* general */
@@ -165,7 +166,7 @@ form .form_inp{
 }
 
 
-.form_inp input, textarea{
+.form_inp input, textarea, select{
   width: 50%;
   padding: 10px 7px 10px 7px;
   background: rgba(231, 231, 231, 0.801);

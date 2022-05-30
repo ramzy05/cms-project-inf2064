@@ -63,7 +63,17 @@
             if($isSaveInDb){
           
               $isSaveInFolder = move_uploaded_file($pic_tmp_name, $destination);
-            }
+              if($isSaveInFolder){
+                echo("
+                <script>
+                window.setTimeout(function(){
+                  window.location.href = './all_personnel.php'
+                }, 500)
+                </script>
+                ");
+                die;
+              }
+            }else echo('echec');
      
             
         }else{
@@ -83,17 +93,11 @@
             ");
             die;
             
-          }
+          }else echo('echec');
           
         
         }
 
-      /* echo("
-        <script>
-         
-            window.location.href = './settings.php';
-        </script>
-        "); */
     }
  ?>
       </form>

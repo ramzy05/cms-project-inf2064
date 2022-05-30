@@ -94,7 +94,7 @@
             ");
             die;
             
-          }
+          }else echo('echec');
           
           
         }

@@ -122,7 +122,7 @@ if(!empty($_GET['del_id']) && !empty($_GET['nom_perso'])){
     </script>
     ");
     die;
-  } 
+  }else echo('echec');
   
 
 
