@@ -48,12 +48,12 @@
             $pic_tmp_name = $_FILES['memb_pic']['tmp_name'];
             
             //$uniqueName = md5(uniqid(rand()), false);
-            $uniqueName = random_filename(50, $directory = '/db_imgs'.'/members_council', $extension = substr($pic_ext, 0));
+            $uniqueName = random_filename(50, $directory = '/db_files'.'/members_council', $extension = substr($pic_ext, 0));
             //$logo_name =$uniqueName . $logo_ext;
 
             $pic_name = $uniqueName ;
             
-            $destination = "db_imgs/members_council/". $pic_name;
+            $destination = "db_files/members_council/". $pic_name;
             
 
             $q = "INSERT INTO conseil (nom, poste, photo) VALUES('$nom_memb','$poste_memb','$pic_name')";

@@ -36,7 +36,7 @@
         </div>
         <div class="form_inp">
         <label >Logo actuel</label>
-         <img src="../admin/db_imgs/<?php echo $old_logo; ?>" alt="" width="60" height="60">
+         <img src="../admin/db_files/logo/<?php echo $old_logo; ?>" alt="" width="60" height="60">
         </div>
         <div class="form_inp">
           <label for="logo">Nouveau logo</label>
@@ -78,11 +78,11 @@
       $logo_tmp_name = $_FILES['logo']['tmp_name'];
       
       //$uniqueName = md5(uniqid(rand()), false);
-      $uniqueName = random_filename(50, $directory = '/db_imgs', $extension = substr($logo_ext, 0));
+      $uniqueName = random_filename(50, $directory = 'db_files/logo', $extension = substr($logo_ext, 0));
       //$logo_name =$uniqueName . $logo_ext;
       $logo_name = $uniqueName ;
       
-      $destination = "db_imgs/". $logo_name;
+      $destination = "db_files/logo/". $logo_name;
       
       
       $q = " UPDATE identite SET nom_mairie='$nom_mairie',

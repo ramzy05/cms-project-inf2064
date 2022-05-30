@@ -64,7 +64,7 @@
         ?>
           <div class="member">
             <div class="mem_pic_cont">
-              <img src="./admin/db_imgs/members_council/<?php echo $row['photo']?>" alt="un membre de la commune" width="300">
+              <img src="./admin/db_files/members_council/<?php echo $row['photo']?>" alt="un membre de la commune" width="300">
             </div>
             <div class="member_info">
               <h3 class="member_name"><?php echo $row['nom'] ?></h3>

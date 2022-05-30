@@ -38,7 +38,7 @@
         </div>
         <div class="form_inp">
         <label >Photo actuel</label>
-         <img src="../admin/db_imgs/members_council/<?php echo $old_photo; ?>" alt="" width="90" height="90">
+         <img src="../admin/db_files/members_council/<?php echo $old_photo; ?>" alt="" width="90" height="90">
         </div>
         <div class="form_inp">
           <label for="photo">Nouvelle Photo</label>
@@ -80,11 +80,11 @@
       $photo_tmp_name = $_FILES['photo']['tmp_name'];
       
       //$uniqueName = md5(uniqid(rand()), false);
-      $uniqueName = random_filename(50, $directory = '/db_imgs'.'/members_council', $extension = substr($photo_ext, 0));
+      $uniqueName = random_filename(50, $directory = '/db_files'.'/members_council', $extension = substr($photo_ext, 0));
       //$photo_name =$uniqueName . $photo_ext;
       $photo_name = $uniqueName ;
       
-      $destination = "db_imgs/members_council/". $photo_name;
+      $destination = "db_files/members_council/". $photo_name;
       
       
       $q = " UPDATE conseil SET nom='$nom',

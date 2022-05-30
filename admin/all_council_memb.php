@@ -48,7 +48,7 @@
                 <?php echo $row['poste'] ?>
                 </td>
                 <td>
-                <img src="./db_imgs/members_council/<?php echo $row['photo'] ?>" alt="" width="90" height="90">
+                <img src="./db_files/members_council/<?php echo $row['photo'] ?>" alt="" width="90" height="90">
                 </td>
                 <!-- edit and delete btn -->
                 <td class="action up_del">

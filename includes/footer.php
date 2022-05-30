@@ -8,7 +8,7 @@
 ?>
 <footer>
     <div class="logo_cont">
-      <a href="#hero"><img src="admin/db_imgs/<?php echo $row['logo'] ; ?>" alt="" class = "logo"></a>
+      <a href="#hero"><img src="admin/db_files/logo/<?php echo $row['logo'] ; ?>" alt="" class = "logo"></a>
     </div>
     <div class="site_info">
       Copyright&copy; <script type="text/javascript">
