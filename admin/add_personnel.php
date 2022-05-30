@@ -80,21 +80,21 @@
 
             $qDefault = "INSERT INTO personnel (nom, fonction) VALUES('$nom_perso','$fonction_memb')";
             $isSaveInDb = mysqli_query($connexion, $qDefault);
+            
+            if($isSaveInDb){
+              
+           echo("
+              <script>
+              window.setTimeout(function(){
+                window.location.href = './all_personnel.php'
+              }, 500)
+              </script>
+              ");
+              die;
+              
+            }else echo('echec');
+            
           }
-          
-          if($isSaveInDb){
-            
-         echo("
-            <script>
-            window.setTimeout(function(){
-              window.location.href = './all_personnel.php'
-            }, 500)
-            </script>
-            ");
-            die;
-            
-          }else echo('echec');
-          
         
         }
 

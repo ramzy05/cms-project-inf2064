@@ -42,7 +42,7 @@ main{
   max-height: 75vh;
   padding: 20px 0 10px 20px;
   background: white;
-  z-index: 1000;
+  z-index: 20;
   overflow: scroll
 }
 

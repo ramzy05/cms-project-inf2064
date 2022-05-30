@@ -72,8 +72,8 @@ header{
   width: 100%;
  
   padding: 20px;
-  z-index: 20000;
-  overflow: hidden;
+  z-index: 100;
+  /* overflow: hidden; */
   transition: all ease .3s,
   box-shadow  ease .7s;
   color: black;
@@ -156,7 +156,7 @@ nav ul{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-basis: 50%;
+  flex-basis: 60%;
 }
 
 nav ul li{
@@ -165,7 +165,7 @@ nav ul li{
   color: inherit;
 }
 
-nav ul a::after{
+nav ul a:not(.dropdown a)::after{
   content: '';
   display: block;
   margin: 0 auto;
@@ -175,13 +175,60 @@ nav ul a::after{
   transition: width ease .6s;
 }
 
-nav ul a:hover::after{
+nav ul a:not(.dropdown a):hover::after{
   width: 100%;
 }
 
-nav li.active a::after{
+nav li.active a:not(.dropdown a)::after{
   width: 100%;
 }
+
+
+/* dropdown */
+/* Dropdown Button */
+/* .dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+} */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 250px;
+  padding: 5px 20px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2000;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+/*   color: black; */
+  padding: 12px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: rgba(220, 20, 60, 0.582);}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color:#ddd;} */
+/* end dropdown */
 /* nav #sign_in_up_container{
   flex-basis: 20%;
   display: flex;
@@ -276,22 +323,22 @@ header button:hover {
 /* end hist sec */
 
 /* conseil sec  */
-.conseil{
+.card_person{
   flex-direction: column;
   overflow: hidden;
   padding: 5rem 10px;
 }
 
-.conseil .members{
+.card_person .members{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 
 } 
 
-.conseil .member{
+.card_person .member{
   
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -301,24 +348,29 @@ header button:hover {
   border: none;
   border-radius: 2px;
   box-shadow: 1px 2px 5px #497e91ca;
-  height: 372px;
+  height: 300px;
+  background: white;
+  padding: 0 5px;
 }
 
 .mem_pic_cont{
   overflow: hidden;
-  height: 70%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
-.conseil img{
+.card_person img{
   object-fit: cover;
   object-position: center;
   transition: transform .6s ease ;
 }
 
-.conseil img:hover{
+.card_person img:hover{
   transform: scale(1.07);
 }
 
 .conseil_descrip{
+  color: white;
   text-align: center;
   margin-bottom: 20px;
   height: 30%;
@@ -329,15 +381,28 @@ header button:hover {
 }
 
 .member_info{
+  justify-self: flex-end;
   text-align: center;
-  margin: 10px auto;
+  background: var(--primary_color);
+  width: 100%;
+  color: white;
+  margin-top: 5px;
 }
 
 .member_info .member_post{
   font-weight: 500;
-  color: rgb(81, 81, 81);
 }
 /* end conseil sec  */
+/* personnel sec  */
+a.see_more{
+  transition: all ease .6s;
+}
+a.see_more:hover{
+  color: var(--secondary_color);
+}
+/* end personnel sec  */
+
+
 
 /* mission sec */
 
