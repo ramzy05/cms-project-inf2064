@@ -4,18 +4,30 @@
   <?php require_once("./includes/header.php"); ?>
   <!-- end header section -->
   
-
+  
   <main>
     <!-- sidebar section -->
     <?php require_once("./includes/sidebar.php"); ?>
     <!-- end sidebar section -->
+    <?php 
+      if(isset($_GET['id_perso'])){
+        $id = $_GET['id_perso'];
+        $nom = $_GET['nom_perso'];
+        $q = "SELECT * FROM identite WHERE id ='$id'";
+        $result = mysqli_query($connexion, $q);
+        $row = mysqli_fetch_assoc($result);
+        $nom = $row['nom_mairie'];
+        $msg = $row['msg_welcome'];
+        $old_logo = $row['logo'];  
+      }
+    ?>
     <section id="content">
-      <h3 class="ad_title">Ajouter du Personnel</h3><br>
+      <h3 class="ad_title">Ajout d'une étape du parcours</h3><br>
       
       <div class="content">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST">
           <div class="form_inp">
-            <label for="nom_perso">Nom</label>
+            <label for="nom_perso">No</label>
             <input type="text" name="nom_perso" required>
           </div>
           <div class="form_inp">
@@ -48,7 +60,7 @@
             $pic_tmp_name = $_FILES['perso_pic']['tmp_name'];
             
             //$uniqueName = md5(uniqid(rand()), false);
-            $uniqueName = random_filename(50, $directory = '/db_files'.'/personnel'.'imgs', $extension = substr($pic_ext, 0));
+            $uniqueName = random_filename(50, $directory = '/db_files'.'/personnel'.'/imgs', $extension = substr($pic_ext, 0));
             //$logo_name =$uniqueName . $logo_ext;
 
             $pic_name = $uniqueName ;

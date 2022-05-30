@@ -22,9 +22,7 @@
           <table>
             <tr>
               <th>N°</th>
-              <th>Noms</th>
-              <th>Fonction</th>
-              <th>Photo</th>
+              <th>Personnel</th>
               <th>Parcours</th>
               <th>Action</th>
             </tr>
@@ -50,9 +48,6 @@
                 </td>
                 <td>
                 <img src="./db_files/personnel/imgs/<?php echo $row['photo'] ?>" alt="" width="90" height="90">
-                </td>
-                <td>
-                  <a href="./parcours.php?id_perso=<?php echo $row['id'] ?>" style="color: #497E91; font-size: 1.2rem;">Voir plus...</a>
                 </td>
                 <!-- edit and delete btn -->
                 <td class="action up_del">
