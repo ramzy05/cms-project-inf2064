@@ -18,6 +18,7 @@
         <li class="links"><a href="#histoire">Notre Histoire</a></li>
         <li class="links"><a href="#conseil">Conseil Municipal</a></li>
         <li class="links"><a href="#mission">Missions</a></li>
+        <li class="links"><a href="./personnel.php">Missions</a></li>
       </ul>
       <button><a href="./admin/index.php">Admin</a></button>
       <!--  <div id="sign_in_up_container">
