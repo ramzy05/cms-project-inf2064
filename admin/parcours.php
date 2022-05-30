@@ -36,7 +36,7 @@
   
   ?>
     <section id="content">
-      <h3 class="ad_title">Personnel</h3><br>
+      <h3 class="ad_title">Parcours Professionnel</h3><br>
 
       <div class="content">
         <div class="left_sec">

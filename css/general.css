@@ -387,6 +387,7 @@ header button:hover {
   width: 100%;
   color: white;
   margin-top: 5px;
+  padding: 0 5px;
 }
 
 .member_info .member_post{

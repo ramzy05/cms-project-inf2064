@@ -25,7 +25,7 @@
   <?php require_once("./includes/sidebar.php"); ?>
   <section id="content">
     <h3 class="ad_title">Modification Personnel</h3><br>
-
+      
       <div class="content">
       <form action="" method="POST" enctype="multipart/form-data">
         <div class="form_inp">

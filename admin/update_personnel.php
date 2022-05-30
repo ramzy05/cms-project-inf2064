@@ -34,7 +34,7 @@
   <main>
   <?php require_once("./includes/sidebar.php"); ?>
   <section id="content">
-    <h3 class="ad_title">Modification d'un membre</h3><br>
+    <h3 class="ad_title">Modification d'un employé</h3><br>
 
       <div class="content">
       <form action="" method="POST" enctype="multipart/form-data">
@@ -58,31 +58,18 @@
           <button  name="update_btn" id="update_btn">Valider</button>
           <!-- <button type="submit">Annuler</button> -->
         </div>
-      </form>
-    </div>
-    
-  </section>
-    <!-- end content section -->
-
-    <!-- footer sec -->
-  
-</main>
-
-<?php 
+        <?php 
   /* update */
   if(isset($_POST['update_btn'])){
     //echo $_POST['update_btn'];
     //add identity in db
     $nom = $_POST['nom'];
-   
     $fonction = $_POST['fonction'];
     $photo_name = '';
     $defaultquery = " UPDATE personnel SET nom='$nom',
      fonction='$fonction'
      WHERE id='$id'";
  
-    $result = '';
-   
     if(!empty($_FILES['photo']["tmp_name"])){
        
       $photo_name = $_FILES['photo']['name'];
@@ -94,37 +81,59 @@
       //$photo_name =$uniqueName . $photo_ext;
       $photo_name = $uniqueName ;
       
-      $destination = "/admin/db_files/personnel/imgs/". $photo_name;
+      $destination = "db_files/personnel/imgs/". $photo_name;
       
       
       $q = " UPDATE personnel SET nom='$nom',
       fonction='$fonction', photo='$photo_name'
        WHERE id='$id'";
       $result = mysqli_query($connexion, $q);
+      
       if($result){
           $isSaveInFolder = move_uploaded_file($photo_tmp_name, $destination);
+          if($isSaveInFolder){
+            echo("
+          <script>
+            window.setTimeout(function(){
+              window.location.href = './all_personnel.php'
+            }, 500)
+          </script>
+          ");
+          die; 
+        }
       }
           
     }else{
           $result = mysqli_query($connexion, $defaultquery);
+          if($result){
+  
+            echo("
+          <script>
+            window.setTimeout(function(){
+              window.location.href = './all_personnel.php'
+            }, 500)
+          </script>
+          ");
+          die; 
+        }
     }
-        if($result){
-
-          echo("
-        <script>
-          window.setTimeout(function(){
-            window.location.href = './all_personnel.php'
-          }, 500)
-        </script>
-        ");
-        die; 
-      }
        
   }
     
     
     
     ?>
+
+      </form>
+    </div>
+    
+  </section>
+    <!-- end content section -->
+
+    <!-- footer sec -->
+  
+</main>
+
 
 
 <script src= "./js/add_up_data.js"></script> 

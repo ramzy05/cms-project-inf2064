@@ -38,7 +38,7 @@
         ?>
           <div class="member">
             <div class="mem_pic_cont">
-              <img src="./admin/db_files/personnel/imgs/<?php echo $row['photo']?>" alt="un employe" width="200">
+              <img src="./admin/db_files/personnel/imgs/<?php echo $row['photo']?>" alt="un employe" width="200" height="200">
             </div>
             <div class="member_info">
               <h3 class="member_name"><?php echo $row['nom'] ?></h3>
