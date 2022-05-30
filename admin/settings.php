@@ -43,7 +43,7 @@
                 <?php echo $row['msg_welcome'] ?>
                 </td>
                 <td>
-                <?php echo '<img src=".db_files/logo/'.$row['logo'].'" class = "logo">'; ?>
+                <?php echo '<img src="./db_files/logo/'.$row['logo'].'" class = "logo">'; ?>
                 </td>
                 <!-- edit and delete btn -->
                 <td class="action">

@@ -20,7 +20,7 @@
         <li class="links"><a href="#mission">Missions</a></li>
         <li class="links"><a href="./personnel.php">Missions</a></li>
       </ul>
-      <button><a href="./admin/index.php">Admin</a></button>
+      <button><a href="./admin/settings.php">Admin</a></button>
       <!--  <div id="sign_in_up_container">
         <button><a href="">Sign up</a></button>
       </div> -->
