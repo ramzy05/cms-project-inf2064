@@ -34,7 +34,7 @@
           <?php 
     if(isset($_POST['add_btn']) ){
         //add identity in db
-        if(!empty($_POST['nom_perso'] && !empty($_POST['fonction_perso']))){
+        if(!empty($_POST['nom_perso']) && !empty($_POST['fonction_perso'])){
 
           $nom_perso = $_POST['nom_perso'];
           $fonction_perso = $_POST['fonction_perso'];
