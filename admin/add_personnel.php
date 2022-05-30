@@ -56,7 +56,7 @@
             $destination = "db_files/personnel/imgs/". $pic_name;
             
 
-            $q = "INSERT INTO conseil (nom, fonction, photo) VALUES('$nom_perso','$fonction_perso','$pic_name')";
+            $q = "INSERT INTO personnel (nom, fonction, photo) VALUES('$nom_perso','$fonction_perso','$pic_name')";
             
          $isSaveInDb = mysqli_query($connexion, $q); 
 
