@@ -15,12 +15,7 @@
     $fonction = $row['fonction'];
     $old_photo = $row['photo'];
 
-  }  if(!empty($_GET['id'])){
-    $id = $_GET['id'];
-    $nom = $_GET['nom_perso'];
-    $id_perso = $_GET['id_perso'];
-    $descript = $_GET['description'];
-  }
+  }  
   else if(!empty($_POST)){
 
     }else{
