@@ -331,7 +331,7 @@ header button:hover {
 
 .card_person .members{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 
 } 
@@ -399,6 +399,14 @@ a.see_more{
 }
 a.see_more:hover{
   color: var(--secondary_color);
+}
+
+a.all_perso{
+  justify-self: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 /* end personnel sec  */
 

@@ -60,7 +60,10 @@
              ?></h3></span> membres</p>
         </div>
         <div class="members">
-        <?php   while($row = mysqli_fetch_assoc($result)){
+        <?php  
+        $number = 1; 
+        while($row = mysqli_fetch_assoc($result)){
+          if($number > 3) break;
         ?>
           <div class="member">
             <div class="mem_pic_cont">
@@ -71,8 +74,9 @@
               <h4 class="member_post"><?php echo $row['poste'] ?></h4>
             </div>
           </div>
-          <?php    }?>
+          <?php   $number++; }?>
         </div>
+        <a href="./conseil.php" class="see_more all_perso">Tout le conseil</a>
       </div>
     </section>
     <!-- conseil section -->
@@ -92,7 +96,7 @@
             ?><p>Notre conseil est constitué de <span id="nbr_membres"><?php 
              if($$num_row <10) echo '0'.$num_row ; 
               else echo $num_row ; 
-             ?></h3></span> membres</p>
+             ?></h3></span> employés</p>
         </div>
         <div class="members">
         <?php   
@@ -112,9 +116,10 @@
           </div>
           <?php $number++;   }?>
         </div>
+        <a href="./personnel.php" class="see_more all_perso">Tout le personnel</a>
       </div>
     </section>
-    <!-- conseil section -->
+    <!-- personnel section -->
 
     <!-- mission section -->
     <section id="mission">
