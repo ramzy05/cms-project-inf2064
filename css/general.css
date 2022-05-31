@@ -423,15 +423,22 @@ a.all_perso{
   text-align: center;
 }
 
-.mission ul{
+.missions div{
   margin: 20px;
   text-align: left;
 }
 
-.mission ul li{
+.missions p{
+  
   line-height: 2rem;
 }
 
+.missions p svg{
+    width: 15px;
+    height: 15px;
+    fill: var(--secondary_color);
+
+}
 /* end mission sec */
 
 /* footer sec */
