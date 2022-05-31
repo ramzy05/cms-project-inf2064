@@ -14,7 +14,7 @@
     </div>
       <!-- <div class="logo"><a href="#hero">M<span>a</span><span>i</span><span>r</span><span>i</span><span>e</span></a></div> -->
       <ul>
-        <li class="links"><a href="#hero">Accueil</a></li>
+        <li class="links"><a href="./index.php#hero">Accueil</a></li>
         <div class="dropdown">
           <li class="dropbtn links_drop">Présentation</li>
           <div class="dropdown-content">

@@ -287,6 +287,27 @@ header button:hover {
   padding: 20px 200px;
 }
 
+.hist_text{
+  position: relative;
+}
+.hist_text svg{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  fill: var(--secondary_color);
+
+}
+
+
+svg.quote_left{
+  top: -20px;
+  left: -60px;
+}
+
+svg.quote_right{
+  bottom: -20px;
+  right: -20px;
+}
 /* end hist sec */
 
 /* conseil sec  */
