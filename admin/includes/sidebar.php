@@ -26,10 +26,7 @@
             <a href="../admin/all_projet.php">Projets</a>
           </div>
           <div class="side_bar_link">
-            <a href="#">Section Conseil</a>
-          </div>
-          <div class="side_bar_link">
-            <a href="#">Section Mission</a>
+            <a href="../admin/all_lieu.php">Tourisme</a>
           </div>
         </div>
       </div>

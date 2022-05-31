@@ -52,16 +52,6 @@
           <button  name="update_btn" id="update_btn">Valider</button>
           <!-- <button type="submit">Annuler</button> -->
         </div>
-      </form>
-    </div>
-    
-  </section>
-    <!-- end content section -->
-
-    <!-- footer sec -->
-  
-</main>
-
 <?php 
   /* update */
   if(isset($_POST['update_btn'])){
@@ -85,15 +75,26 @@
       $logo_tmp_name = $_FILES['logo']['tmp_name'];
       
       //$uniqueName = md5(uniqid(rand()), false);
-      $uniqueName = random_filename(50, $directory = 'db_files/logo', $extension = substr($logo_ext, 0));
+      $uniqueName = random_filename(50, $directory = '/db_files/logo', $extension = substr($logo_ext, 0));
       //$logo_name =$uniqueName . $logo_ext;
       $logo_name = $uniqueName ;
       
       $destination = "db_files/logo/". $logo_name;
       
-      
+      /* suppresions de l'ancien logo dans les fichiers */
+      $tmpQuery = "SELECT * FROM identite LIMIT 1";
+      $resultTmp =mysqli_query($connexion, $tmpQuery);
+      $row_tmp = mysqli_fetch_assoc($resultTmp); 
+      if(!empty($row_tmp['logo']) && $row_tmp['logo'] != "default_logo.png"){
+        echo $row_tmp['logo'];
+        $img = $row_tmp['logo'];
+        $file_pointer = "./db_files/logo/".$img;
+        unlink($file_pointer);
+      }
+      /* end suppresions de l'ancien logo dans les fichiers */
+
       $q = " UPDATE identite SET nom_mairie='$nom_mairie',
-       msg_welcome='$welc_msg', logo='$logo_name',, histoire = '$histoire'
+       msg_welcome='$welc_msg', logo='$logo_name', histoire = '$histoire'
        WHERE id='$id'";
       $result = mysqli_query($connexion, $q);
       if($result){
@@ -120,6 +121,16 @@
     
     
     ?>
+      </form>
+    </div>
+    
+  </section>
+    <!-- end content section -->
+
+    <!-- footer sec -->
+  
+</main>
+
 
 
 <script src= "./js/add_up_data.js"></script> 
