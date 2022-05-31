@@ -92,6 +92,12 @@
   font-weight: 500;
 }
 
+.download__cv svg{
+  width: 15px;
+  height: 15px;
+  fill: var(--secondary_color_light);
+}
+
 h3.function{
   font-weight: 300;
 } 
