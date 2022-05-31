@@ -23,6 +23,9 @@
             <a href="../admin/all_activite.php">Activités</a>
           </div>
           <div class="side_bar_link">
+            <a href="../admin/all_projet.php">Projets</a>
+          </div>
+          <div class="side_bar_link">
             <a href="#">Section Conseil</a>
           </div>
           <div class="side_bar_link">
