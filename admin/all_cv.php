@@ -103,7 +103,7 @@ if(isset($_GET['del_cv'])){
   WHERE id='$perso_id'";
 
   if(mysqli_query($connexion, $q)){
-    if(!empty($_GET['cv']) && $_GET['cv'] != "default_lieu.jpg"){
+    if(!empty($_GET['cv'])){
       $cv = $_GET['cv'];
       $file_pointer = "./db_files/personnel/cv/".$cv;
       unlink($file_pointer);
