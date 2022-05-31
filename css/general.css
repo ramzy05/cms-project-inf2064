@@ -183,12 +183,20 @@ nav li.active a:not(.dropdown a)::after{
   width: 100%;
 }
 
+nav ul a{
+  text-align: center;
+  vertical-align: middle;
+}
 
 /* dropdown */
 
 .dropdown {
+  display: block;
   position: relative;
-  display: inline-block;
+  
+}
+.dropdown>a{
+  font-size: 1.1rem;
 }
 
 .dropdown-content {
@@ -210,10 +218,9 @@ nav li.active a:not(.dropdown a)::after{
   display: block;
 }
 
-/* Change color of dropdown links on hover */
+
 .dropdown-content a:hover {background-color: #eae5e5;}
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* end dropdown */
