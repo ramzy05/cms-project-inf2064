@@ -26,6 +26,14 @@
         </div>
         <li class="links"><a href="./projet.php">Projets</a></li>
         <li class="links"><a href="./activite.php">Activités</a></li>
+        <div class="dropdown">
+          <li class="dropbtn links_drop">Annonces</li>
+          <div class="dropdown-content">
+          <li><a href="./mariage.php">Mariages</a></li>
+          <li><a href="./decret.php">Décret</a></li>
+          <li><a href="./.marche_p.php">Marchés publiques</a></li>
+          </div>
+        </div>
         <li class="links"><a href="./annonce.php">Annonces</a></li>
         <li class="links"><a href="./tourisme.php">Tourisme</a></li>
         <li class="links"><a href="./publicite.php">Publicité</a></li>

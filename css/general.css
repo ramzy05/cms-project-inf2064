@@ -250,6 +250,7 @@ header button:hover {
 .hero_title{
   color: white;
   font-size: 2.5rem;
+  text-transform: capitalize;
 }
 
 .start_btn_cont{
