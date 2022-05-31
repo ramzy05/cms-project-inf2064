@@ -24,6 +24,7 @@
               <th>Nom mairie</th>
               <th>Message de bienvenue</th>
               <th>logo</th>
+              <th>Histoire</th>
               <th>Action</th>
             </tr>
             <!-- let load information from db -->
@@ -44,6 +45,9 @@
                 </td>
                 <td>
                 <?php echo '<img src="./db_files/logo/'.$row['logo'].'" class = "logo">'; ?>
+                </td>
+                <td>
+                <?php echo $row['histoire']; ?>
                 </td>
                 <!-- edit and delete btn -->
                 <td class="action">

@@ -38,7 +38,7 @@
         </div>
         <div class="form_inp">
         <label >Photo actuel</label>
-         <img src="../admin/db_files/member/imgs/<?php echo $old_photo; ?>" alt="" width="90" height="90">
+         <img src="./db_files/members_council/<?php echo $old_photo; ?>" alt="" width="90" height="90">
         </div>
         <div class="form_inp">
           <label for="photo">Nouvelle Photo</label>

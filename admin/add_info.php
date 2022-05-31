@@ -23,6 +23,10 @@
             <textarea name="msg_welc" id="" cols="30" rows="10"></textarea>
           </div>
           <div class="form_inp">
+          <label for="histoire">Histoire</label>
+          <textarea name="histoire" id="" cols="30" rows="10"></textarea>
+        </div>
+          <div class="form_inp">
             <label for="logo">Votre logo</label>
             <input type="file" name="logo">
           </div>
@@ -50,6 +54,7 @@
           //add identity in db
           $nom_marie = $_POST['nom_mairie'];
           $welc_msg = $_POST['msg_welc'];
+          $histoire = $_POST['histoire'];
   
           if(!empty($_FILES['logo']["tmp_name"])){
             
@@ -67,7 +72,7 @@
             
             $isSaveInFolder = move_uploaded_file($logo_tmp_name, $destination);
             
-            $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo) VALUES('$nom_marie','$welc_msg','$logo_name')";
+            $q = "INSERT INTO identite (nom_mairie, msg_welcome, logo, histoire) VALUES('$nom_marie','$welc_msg','$logo_name', '$histoire')";
             
             $isSaveInDb = mysqli_query($connexion, $q);
 
@@ -79,7 +84,7 @@
             
           }else{
 
-            $qDefault = "INSERT INTO identite (nom_mairie, msg_welcome) VALUES('$nom_marie','$welc_msg')";
+            $qDefault = "INSERT INTO identite (nom_mairie, msg_welcome, histoire) VALUES('$nom_marie','$welc_msg','$histoire')";
             $isSaveInDb = mysqli_query($connexion, $qDefault);
           }
           

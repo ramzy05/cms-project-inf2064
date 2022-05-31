@@ -14,6 +14,7 @@
     $row = mysqli_fetch_assoc($result);
     $nom = $row['nom_mairie'];
     $msg = $row['msg_welcome'];
+    $hist = $row['histoire'];
     $old_logo = $row['logo'];
     
   }
@@ -34,6 +35,11 @@
           <label for="msg_welc">Message de bienvenue</label>
           <textarea name="msg_welc" id="" cols="30" rows="10"><?php echo $msg ; ?></textarea>
         </div>
+        <div class="form_inp">
+          <label for="histoire">Histoire</label>
+          <textarea name="histoire" id="" cols="30" rows="10"><?php echo $hist ; ?></textarea>
+        </div>
+
         <div class="form_inp">
         <label >Logo actuel</label>
          <img src="../admin/db_files/logo/<?php echo $old_logo; ?>" alt="" width="60" height="60">
@@ -64,9 +70,10 @@
     $nom_mairie = $_POST['nom_mairie'];
    
     $welc_msg = $_POST['msg_welc'];
+    $histoire = $_POST['histoire'];
     $logo_name = '';
     $defaultquery = " UPDATE identite SET nom_mairie='$nom_mairie',
-     msg_welcome='$welc_msg'
+     msg_welcome='$welc_msg', histoire = '$histoire'
      WHERE id='$id'";
  
     $result = '';
@@ -86,7 +93,7 @@
       
       
       $q = " UPDATE identite SET nom_mairie='$nom_mairie',
-       msg_welcome='$welc_msg', logo='$logo_name'
+       msg_welcome='$welc_msg', logo='$logo_name',, histoire = '$histoire'
        WHERE id='$id'";
       $result = mysqli_query($connexion, $q);
       if($result){
