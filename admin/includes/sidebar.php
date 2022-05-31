@@ -17,6 +17,12 @@
             <a href="../admin/all_cv.php">CV</a>
           </div>
           <div class="side_bar_link">
+            <a href="../admin/all_mission.php">Missions</a>
+          </div>
+          <div class="side_bar_link">
+            <a href="../admin/all_activite.php">Activités</a>
+          </div>
+          <div class="side_bar_link">
             <a href="#">Section Conseil</a>
           </div>
           <div class="side_bar_link">
