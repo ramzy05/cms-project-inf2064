@@ -20,7 +20,7 @@
             <a href="../admin/all_mission.php">Missions</a>
           </div>
           <div class="side_bar_link">
-            <a href="../admin/all_activite.php">Activités</a>
+            <a href="../admin/all_activite.php">Actualités</a>
           </div>
           <div class="side_bar_link">
             <a href="../admin/all_projet.php">Projets</a>

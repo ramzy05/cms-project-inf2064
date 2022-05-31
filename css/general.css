@@ -15,9 +15,13 @@
   /* --secondary_color:#F9A826; */
   --secondary_color: #dc143c;
   --gradient: linear-gradient(0deg, #55b88d 0%, var(--primary_color) 81%);
+  --gradient2: linear-gradient(60deg, var(--secondary_color) 0%, var(--primary_color) 100%);
   --border:  1px solid red;
 }
 /* general */
+body{
+  background-color: #fcfcfcaf;
+}
 a{
   text-decoration: none;
   color: inherit;
@@ -39,7 +43,10 @@ button{
   padding: 0;
   cursor: pointer;
 }
-
+ img{
+   object-fit: cover;
+   object-position: center;
+ }
 .title{
   font-size: 2.5rem;
   color: #2F4858;
@@ -439,14 +446,135 @@ footer{
   background: #2F4858;
   color: white;
 }
+/* pro_actu */
+.pro_actu{
+  padding-top: 200px;
+  padding-bottom: 200px;
+  
+}
+.pro_actu .item_cont{
+  margin-bottom: 50px;
+}
+.pro_actu .sub_title{
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--secondary_color);
+}
+/* end pro_actu */
 
-/* footer .logo{
+/* lieu touristique */
+#tourisme .tourisme{
+  padding-top: 200px;
+  padding-bottom: 200px;
+  flex-direction: column;
+  align-items: center;
+}
+ #tourisme .tourisme_header h1{
+  margin-bottom: 50px;
+
+}
+
+#tourisme .all_lieux{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+#tourisme .lieu_item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 400px;
+  margin: 0;
+  width: 100%;
+  
+}
+
+
+#tourisme .lieu_info{
+   padding: 30px;
+   flex-basis: 50%;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   background-image: var(--gradient2);
+   color: white;
+   height: 100%;
+}
+
+#tourisme .lieu_info h1{
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+#tourisme .lieu_info h2{
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+#tourisme .lieu_info p{
+  margin-top: 20px;
+  display: inline-block;
   color: white;
 }
 
- 
-footer .logo span:nth-of-type(3),
-footer .logo span:nth-of-type(2){
-  color: white;
-} */
-/* end footer sec */
+#tourisme .lieu_img{
+  flex-basis: 50%;
+  width: 100%;
+  height: 100%;
+  /* width: 500px;
+  height: 400px; */
+  overflow: hidden;
+  position: relative;
+
+}
+
+#tourisme .lieu_img::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  opacity: .7;
+  transition: .6s ease opacity;
+}
+
+#tourisme .lieu_img img{
+  transition: .3s ease transformation;
+}
+#tourisme .lieu_item:hover  .lieu_img img{
+  transform: scale(1.1);
+
+}
+
+#tourisme .lieu_item:hover  .lieu_img::after{
+  opacity: 0;
+}
+
+
+
+#tourisme .lieu_item{
+ height: 400px;
+ margin: 0;
+ width: 100%;
+ border-radius: 0;
+}
+
+
+#tourisme .all_lieux .lieu_item:nth-child(2) .lieu_info,
+#tourisme .all_lieux .lieu_item:nth-child(4) .lieu_info
+{
+ order: 1;
+} 
+
+
+/* end lieu touristique */

@@ -15,7 +15,7 @@
 
     
     <section id="content">
-      <h3 class="ad_title">Activités</h3><br>
+      <h3 class="ad_title">Actualités</h3><br>
 
       <div class="content">
         <div class="left_sec">

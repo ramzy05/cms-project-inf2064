@@ -25,7 +25,7 @@
           </div>
         </div>
         <li class="links"><a href="./projet.php">Projets</a></li>
-        <li class="links"><a href="./activite.php">Activités</a></li>
+        <li class="links"><a href="./actualite.php">Actualités</a></li>
         <div class="dropdown">
           <a class="dropbtn links_drop">Annonces</a>
           <div class="dropdown-content">

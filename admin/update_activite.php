@@ -34,7 +34,7 @@
   <main>
   <?php require_once("./includes/sidebar.php"); ?>
   <section id="content">
-    <h3 class="ad_title">Modification d'une activité</h3><br>
+    <h3 class="ad_title">Modification d'une actualité</h3><br>
 
     <form action="update_activite.php" method="POST">
       <input type="text" value="<?php echo $id; ?>" name="id_activite" style="display: none;">

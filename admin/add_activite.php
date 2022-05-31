@@ -11,7 +11,7 @@
     <!-- end sidebar section -->
    
     <section id="content">
-      <h3 class="ad_title">Ajout d'une activité</h3><br>
+      <h3 class="ad_title">Ajout d'une actualité</h3><br>
       
       <div class="content">
         <form action="add_activite.php" method="POST">

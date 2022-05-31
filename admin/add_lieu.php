@@ -13,7 +13,7 @@
       <h3 class="ad_title">Nouveau lieu touristique</h3><br>
       
       <div class="content">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="add_lieu.php" method="POST" enctype="multipart/form-data">
           <div class="form_inp">
             <label for="nom_lieu">Nom</label>
             <input type="text" name="nom_lieu" required>
@@ -67,11 +67,11 @@
             $destination = "db_files/tourisme/". $pic_name;
             
 
-            $q = "INSERT INTO lieu_touristique (nom, descriptions, adresse, contact, photo)
-             VALUES('$nom_lieu','$description', '$adresse', '$contact','$pic_name')";
+            $q = "INSERT INTO lieu_touristique (nom, descriptions, adresse, contact, photo) 
+            VALUES('$nom_lieu', '$description', '$adresse', '$contact','$pic_name')";
            
-            $isSaveInDb = mysqli_query($connexion, $q);
-
+           $isSaveInDb = mysqli_query($connexion, $q);
+           echo'cdsc';
             if($isSaveInDb){
           
               $isSaveInFolder = move_uploaded_file($pic_tmp_name, $destination);

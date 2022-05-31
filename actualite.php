@@ -16,11 +16,11 @@
     <!-- presentation section -->
     <section id="histoire">
       <div class="histoire container pro_actu">
-        <h2 class="title">Nos Projets</h2>
+        <h2 class="title">Actualités</h2>
         <div class="hist_content pro_actu">
           <?php 
             /* echo ("onjour"); */
-              $q = " SELECT * FROM projet ";
+              $q = " SELECT * FROM activite ";
               $result = mysqli_query($connexion, $q);
               while($row = mysqli_fetch_assoc($result)){
             ?>
