@@ -10,7 +10,7 @@
 
   if(!empty($_GET['id'])){
     $id = $_GET['id'];
-    $q = "SELECT * FROM activite WHERE id ='$id'";
+    $q = "SELECT * FROM projet WHERE id ='$id'";
     $result = mysqli_query($connexion, $q);
     $row = mysqli_fetch_assoc($result);
     $descript = $row['descriptions'];
@@ -23,7 +23,7 @@
     echo("
     <script>
     window.setTimeout(function(){
-      window.location.href = './all_activite.php'
+      window.location.href = './all_projet.php'
     }, 500)
     </script>
     ");
@@ -34,10 +34,10 @@
   <main>
   <?php require_once("./includes/sidebar.php"); ?>
   <section id="content">
-    <h3 class="ad_title">Modification d'une activité</h3><br>
+    <h3 class="ad_title">Modification d'un projet</h3><br>
 
-    <form action="update_activite.php" method="POST">
-      <input type="text" value="<?php echo $id; ?>" name="id_activite" style="display: none;">
+    <form action="update_projet.php" method="POST">
+      <input type="text" value="<?php echo $id; ?>" name="id_projet" style="display: none;">
       <div class="form_inp">
         <label for="titre">Titre</label>
         <input type="text" name="titre" required value="<?php echo $titre; ?>">
@@ -58,8 +58,8 @@
     if(!empty($_POST['description'])){
       $description = $_POST['description'];
       $titre = $_POST['titre'];
-      $id= $_POST['id_activite'];
-      $q = " UPDATE activite SET titre='$titre' ,descriptions ='$description'
+      $id= $_POST['id_projet'];
+      $q = " UPDATE projet SET titre='$titre' ,descriptions ='$description'
        WHERE id='$id'";
   
       $result = mysqli_query($connexion, $q);
@@ -68,7 +68,7 @@
           echo("
           <script>
           window.setTimeout(function(){
-            window.location.href = './all_activite.php'
+            window.location.href = './all_projet.php'
           }, 500)
           </script>
           ");
