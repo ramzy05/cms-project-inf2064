@@ -18,10 +18,10 @@
         <div class="dropdown">
           <li class="dropbtn links_drop">Présentation</li>
           <div class="dropdown-content">
-          <li><a href="#histoire">Notre Histoire</a></li>
-          <li><a href="#conseil">Conseil Municipal</a></li>
-          <li><a href="#personnel">Personnel</a></li>
-          <li><a href="#mission">Missions</a></li>
+          <li><a href="./index.php#histoire">Notre Histoire</a></li>
+          <li><a href="./index.php#conseil">Conseil Municipal</a></li>
+          <li><a href="./index.php#personnel">Personnel</a></li>
+          <li><a href="./index.php#mission">Missions</a></li>
           </div>
         </div>
         <li class="links"><a href="./projet.php">Projets</a></li>

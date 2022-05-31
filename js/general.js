@@ -31,7 +31,7 @@ for (let i = 0; i < links.length; i++) {
     let current = document.getElementsByClassName("active");
 
     if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
+      current[0].className = current[0].className.replace("active", "");
     }
 
    

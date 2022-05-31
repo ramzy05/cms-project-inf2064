@@ -4,7 +4,7 @@
 <!-- end head -->
 
   <!-- header section -->
-  <?php require_once("./includes/header_other_page.php"); ?>
+  <?php require_once("./includes/header.php"); ?>
   
   <!-- end header section -->
   
