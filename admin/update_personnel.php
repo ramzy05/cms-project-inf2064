@@ -90,6 +90,17 @@
       $result = mysqli_query($connexion, $q);
       
       if($result){
+         /* suppresions de l'ancien photo dans les fichiers */
+         $tmpQuery = "SELECT * FROM personnel WHERE id ='$id'";
+         $resultTmp =mysqli_query($connexion, $tmpQuery);
+         $row_tmp = mysqli_fetch_assoc($resultTmp); 
+         if(!empty($row_tmp['photo']) && $row_tmp['photo'] != "default_personnel.png"){
+
+           $img = $row_tmp['photo'];
+           $file_pointer = "./db_files/personnel/imgs/".$img;
+           unlink($file_pointer);
+         }
+         /* end suppresions de l'ancien photo dans les fichiers */
           $isSaveInFolder = move_uploaded_file($photo_tmp_name, $destination);
           if($isSaveInFolder){
             echo("

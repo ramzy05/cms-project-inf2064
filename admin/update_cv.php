@@ -75,7 +75,17 @@
             $isSaveInDb = mysqli_query($connexion, $q); 
 
             if($isSaveInDb){
-          
+                /* suppresions de l'ancien logo dans les fichiers */
+              $tmpQuery = "SELECT * FROM personnel WHERE id ='$perso_id'";
+              $resultTmp =mysqli_query($connexion, $tmpQuery);
+              $row_tmp = mysqli_fetch_assoc($resultTmp); 
+              if(!empty($row_tmp['cv'])){
+       
+                $cv = $row_tmp['cv'];
+                $file_pointer = "./db_files/personnel/cv/".$cv;
+                unlink($file_pointer);
+              }
+              /* end suppresions de l'ancien logo dans les fichiers */
               $isSaveInFolder = move_uploaded_file($cv_tmp_name, $destination);
               if($isSaveInFolder){
                 echo("

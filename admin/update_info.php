@@ -81,23 +81,23 @@
       
       $destination = "db_files/logo/". $logo_name;
       
-      /* suppresions de l'ancien logo dans les fichiers */
-      $tmpQuery = "SELECT * FROM identite LIMIT 1";
-      $resultTmp =mysqli_query($connexion, $tmpQuery);
-      $row_tmp = mysqli_fetch_assoc($resultTmp); 
-      if(!empty($row_tmp['logo']) && $row_tmp['logo'] != "default_logo.png"){
-        echo $row_tmp['logo'];
-        $img = $row_tmp['logo'];
-        $file_pointer = "./db_files/logo/".$img;
-        unlink($file_pointer);
-      }
-      /* end suppresions de l'ancien logo dans les fichiers */
-
+      
       $q = " UPDATE identite SET nom_mairie='$nom_mairie',
        msg_welcome='$welc_msg', logo='$logo_name', histoire = '$histoire'
        WHERE id='$id'";
       $result = mysqli_query($connexion, $q);
       if($result){
+        /* suppresions de l'ancien logo dans les fichiers */
+        $tmpQuery = "SELECT * FROM identite LIMIT 1";
+        $resultTmp =mysqli_query($connexion, $tmpQuery);
+        $row_tmp = mysqli_fetch_assoc($resultTmp); 
+        if(!empty($row_tmp['logo']) && $row_tmp['logo'] != "default_logo.png"){
+         
+          $img = $row_tmp['logo'];
+          $file_pointer = "./db_files/logo/".$img;
+          unlink($file_pointer);
+        }
+        /* end suppresions de l'ancien logo dans les fichiers */
           $isSaveInFolder = move_uploaded_file($logo_tmp_name, $destination);
       }
           

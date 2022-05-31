@@ -61,7 +61,7 @@
          $isSaveInDb = mysqli_query($connexion, $q); 
 
             if($isSaveInDb){
-          
+             
               $isSaveInFolder = move_uploaded_file($pic_tmp_name, $destination);
               if($isSaveInFolder){
                 echo("
