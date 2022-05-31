@@ -1,18 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500&display=swap');
 
-/* importing fonts locally */
-/* @font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Roboto-Regular.eot");
-  src: url("/fonts/Roboto-Regular.eot?#iefix") format('embedded-opentype'),
-       url("/fonts/Roboto-Regular.woff2") format('woff2'),
-       url("/fonts/Roboto-Regular.woff") format('woff'),
-       url("/fonts/Roboto-Regular.ttf") format('truetype');
-  font-weight: 400;
-  font-style: normal;
-} */
 
-/* end importing fonts locally */
 
 *, ::before,::after{
   margin: 0;

@@ -42,7 +42,7 @@
           <?php 
     if(isset($_POST['add_btn']) ){
         //add identity in db
-        if(!empty($_POST['nom_lieu'] && !empty($_POST['description']))){
+        if(!empty($_POST['nom_lieu']) && !empty($_POST['description'])){
 
           $nom_lieu = $_POST['nom_lieu'];
           $contact = $_POST['contact'];
@@ -69,7 +69,7 @@
 
             $q = "INSERT INTO lieu_touristique (nom, descriptions, adresse, contact, photo)
              VALUES('$nom_lieu','$description', '$adresse', '$contact','$pic_name')";
-            
+           
             $isSaveInDb = mysqli_query($connexion, $q);
 
             if($isSaveInDb){

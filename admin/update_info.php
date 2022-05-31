@@ -42,7 +42,7 @@
 
         <div class="form_inp">
         <label >Logo actuel</label>
-         <img src="../admin/db_files/logo/<?php echo $old_logo; ?>" alt="" width="60" height="60">
+         <img src="./db_files/logo/<?php echo $old_logo; ?>" alt="" width="60" height="60">
         </div>
         <div class="form_inp">
           <label for="logo">Nouveau logo</label>
