@@ -24,11 +24,11 @@
           <li><a href="#mission">Missions</a></li>
           </div>
         </div>
-        <li class="links"><a href="#histoire">Projets</a></li>
-        <li class="links"><a href="#conseil">Activités</a></li>
-        <li class="links"><a href="#mission">Annonces</a></li>
-        <li class="links"><a href="./personnel.php">Tourisme</a></li>
-        <li class="links"><a href="./personnel.php">Publicité</a></li>
+        <li class="links"><a href="./projet.php">Projets</a></li>
+        <li class="links"><a href="./activite.php">Activités</a></li>
+        <li class="links"><a href="./annonce.php">Annonces</a></li>
+        <li class="links"><a href="./tourisme.php">Tourisme</a></li>
+        <li class="links"><a href="./publicite.php">Publicité</a></li>
       </ul>
       <button><a href="./admin/settings.php">Admin</a></button>
       <!--  <div id="sign_in_up_container">
