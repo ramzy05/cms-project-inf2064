@@ -9,6 +9,10 @@
   scroll-behavior: smooth;
 }
 
+img{
+  width: 100px;
+  height: 100px;
+ }
 :root{
   --primary_color:#475155;
   /* --secondary_color:#F9A826; */

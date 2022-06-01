@@ -35,7 +35,7 @@
       
       <h3 >Employé: <span style="color: #497E91; font-size:1.1rem"><?php echo $nom; ?></span></h3><br>
       <div class="content">
-        <form action="add_cv.php" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
           <input name="perso_id"  value=" <?php echo $id; ?>" style="display: none;">
           <input name="perso_nom"  value=" <?php echo $nom; ?>" style="display: none;">
          
