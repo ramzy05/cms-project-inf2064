@@ -3,7 +3,7 @@ const  header = document.querySelector('header')
 
 /* event on window scroll */
 
-/* 
+
 let lastScrollTop = 0;
 window.addEventListener("scroll", ()=>{
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop
@@ -14,7 +14,7 @@ window.addEventListener("scroll", ()=>{
   }
   lastScrollTop = scrollTop
 })
- */
+
 /* active menu */
 let links = document.querySelectorAll('.links')
 let sections = document.querySelectorAll('section')
