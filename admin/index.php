@@ -9,11 +9,19 @@
 
   <!-- sidebar section -->
   <?php require_once("./includes/sidebar.php"); ?>
+
   <!-- end sidebar section -->
 
   <!-- content section -->
 
+  <?php
+  /* echo ("onjour"); */
+  $q = "SELECT theme FROM identite LIMIT 1";
+  $result = mysqli_query($connexion, $q);
+  $row = mysqli_fetch_assoc($result);
+  extract($row);
 
+  ?>
   <section id="content">
     <h3 class="ad_title">Thème du site</h3><br>
 
@@ -21,9 +29,9 @@
       <form action="" method="POST">
         <div class="form_inp">
           <label for="theme_def">Thème par défaut</label>
-          <input type="radio" id="theme_def" name="theme" value="general.css" onchange="changeTheme(this);">
+          <input type="radio" id="theme_def" name="theme" value="general.css" onchange="changeTheme(this);" <?php if ($theme == 'general.css') echo 'checked'; ?>>
           <label for="theme_2">Thème 2</label>
-          <input type="radio" id="theme_2" name="theme" value="general2.css" onchange="changeTheme(this);">
+          <input type="radio" id="theme_2" name="theme" value="general2.css" onchange="changeTheme(this);" <?php if ($theme == 'general2.css') echo 'checked'; ?>>
         </div>
       </form>
     </div>
