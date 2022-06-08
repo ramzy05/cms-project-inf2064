@@ -8,7 +8,7 @@ function changeTheme(theme) {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(response){
       if (this.readyState == 4 && this.status == 200) {
-        console.log('tout est ok: '+this.responseText)
+        console.log('theme modifié avec success: '+this.responseText)
       }
     }
     xhr.open("POST",  url)
