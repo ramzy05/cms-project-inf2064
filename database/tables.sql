@@ -7,6 +7,10 @@ CREATE TABLE `identite` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4	
 
+
+INSERT INTO `identite` (`id`, `nom_mairie`, `msg_welcome`, `logo`, `histoire`) VALUES (NULL, 'yaoundé', 'Bienvenue sur notre site web', 'default_logo.png', 'histoire de la mairie ici')
+
+
 CREATE TABLE `activite` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) NOT NULL,
