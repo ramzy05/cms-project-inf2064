@@ -4,8 +4,10 @@ CREATE TABLE `identite` (
   `msg_welcome` text NOT NULL,
   `logo` varchar(255) NOT NULL DEFAULT 'default_logo.png',
   `histoire` text DEFAULT NULL,
+  `theme` varchar(255) NOT NULL DEFAULT 'general.css',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4	
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4
+
 
 
 INSERT INTO `identite` (`id`, `nom_mairie`, `msg_welcome`, `logo`, `histoire`) VALUES (NULL, 'yaoundé', 'Bienvenue sur notre site web', 'default_logo.png', 'histoire de la mairie ici')
