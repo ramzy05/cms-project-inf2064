@@ -694,12 +694,14 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     min-height: 100vh;
     max-height: 75vh;
     padding: 100px 0 10px 20px;
     background: white;
     z-index: 20;
     margin-top: 100px;
+    margin-bottom: 200px;
   }
 
   #auth a {
@@ -724,16 +726,22 @@ footer{
     flex-direction: column;
     width: 500px;
     flex-wrap: wrap;
-    max-height: 500px;
+    min-height: 420px;
     box-shadow: 0 0 10px rgb(175, 175, 175);
     border-radius: 10px;
-    padding: 30px 40px 30px 20px;
+    padding: 50px 40px 30px 20px;
+    position: relative;
   }
 
+  .message_alert{
+    position: absolute;
+    top: 30px;
+  }
   .form_inputs {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 100%;
   }
 

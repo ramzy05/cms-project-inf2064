@@ -18,3 +18,4 @@ window.addEventListener("scroll", ()=>{
 /* active menu */
 let links = document.querySelectorAll('.links')
 let sections = document.querySelectorAll('section')
+
