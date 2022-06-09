@@ -3,7 +3,7 @@ function changeTheme(theme) {
   if(theme.checked){
 
     let url = window.location.href;
-    url = url.slice(0,url.lastIndexOf('index'))+'change_theme.php';
+    url = url.slice(0,url.lastIndexOf('index'))+'/change_theme.php';
     console.log(url)
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(response){
