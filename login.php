@@ -15,7 +15,7 @@
       $success = false;
 
 
-      $query = "SELECT * FROM users WHERE username='$username'";
+      $query = "SELECT * FROM users WHERE username='$username' LIMIT 1";
       $result = mysqli_query($connexion, $query);
       $row = mysqli_fetch_assoc($result);
 
