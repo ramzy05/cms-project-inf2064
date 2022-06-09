@@ -322,6 +322,10 @@ svg.quote_right{
   padding: 10rem 10px;
 }
 
+
+.clip{
+  display: none;
+}
 .card_person .members{
   display: grid;
   grid-template-columns: repeat(3, 1fr);

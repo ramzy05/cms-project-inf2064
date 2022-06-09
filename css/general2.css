@@ -11,10 +11,14 @@
 }
 
 :root{
-  --primary_color:#0e274e;
+  --primary_color:#4E597B;/*#0e274e;*/
+  --primary_color_light:#6D588E;
   /* --secondary_color:#F9A826; */
-  --secondary_color: #DBA11C;
-  --gradient: linear-gradient(60deg, var(--secondary_color) 0%, var(--primary_color) 100%);
+  --secondary_color: #AB5278;
+  --text_color:#334B49;
+  --hover_color: #AB5278;
+  --gradient:linear-gradient(293deg, #91619b 0%, #367fad 100%);
+  
   --gradient2: linear-gradient(60deg, var(--primary_color) 0%, var(--primary_color) 100%);
   --border:  1px solid red;
 }
@@ -29,7 +33,7 @@ a{
 
 p{
   font-size: 1.1rem;
-  color: var(--primary_color);
+  color: var(--text_color);
 }
 
 .container{
@@ -263,6 +267,7 @@ header button:hover {
   align-items: center;
   flex-direction: column;
   background: var(--gradient2);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 76%);
 }
 
 
@@ -338,11 +343,30 @@ svg.quote_right{
 }
 
 .card_person .members{
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-
+  position: relative;
 } 
+
+.clip{
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  z-index: -1;
+  background: var(--gradient);
+}
+
+.members .clip_conseil{
+  
+  clip-path: polygon(0 61%, 0 1%, 100% 21%, 100% 84%);
+}
+.members .clip_personnel{
+  clip-path: polygon(0 61%, 100% 1%, 100% 0%, 100% 84%);
+}
 
 .card_person .member{
   
@@ -405,9 +429,10 @@ svg.quote_right{
 /* personnel sec  */
 a.see_more{
   transition: all ease .6s;
+  color: white;
 }
 a.see_more:hover{
-  color: var(--secondary_color);
+  color: rgb(196, 189, 189);
 }
 
 a.all_perso{
