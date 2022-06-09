@@ -234,7 +234,7 @@ header button{
 }
 
 header button:hover {
-  background: #ad1b38;
+  background: var(--primary_color);
 }
 
 /* end header */
@@ -667,3 +667,162 @@ footer{
   font-weight: 300;
 } 
 /* end personnel css */
+
+
+
+
+
+
+
+#auth img {
+    width: 100px;
+    height: 100px;
+  }
+
+/*   :root {
+    --primary_color: #475155;
+    --secondary_color: #dc143c;
+  } */
+
+  
+  
+  /* general */
+  
+  
+  main#auth {
+    --color: #497E91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-height: 75vh;
+    padding: 100px 0 10px 20px;
+    background: white;
+    z-index: 20;
+    margin-top: 100px;
+  }
+
+  #auth a {
+    text-decoration: none;
+    color: inherit;
+
+  }
+
+  #auth p {
+    font-size: 1.1rem;
+    color: rgb(72, 72, 72);
+  }
+
+
+
+  /* let's style form control */
+
+  #auth form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    flex-wrap: wrap;
+    max-height: 500px;
+    box-shadow: 0 0 10px rgb(175, 175, 175);
+    border-radius: 10px;
+    padding: 30px 40px 30px 20px;
+  }
+
+  .form_inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  #auth form h3 {
+    font-weight: 900;
+    font-size: 1.5em;
+    padding-bottom: 20px;
+    color: var(--secondary_color);
+  }
+
+  #auth form .form_inp {
+
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    /*  border: var(--border); */
+    padding-left: 20px;
+    margin-bottom: 25px;
+
+  }
+
+
+  #auth .form_inp input {
+    width: 70%;
+    padding: 10px 7px 10px 7px;
+    background: rgba(231, 231, 231, 0.801);
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1em;
+    /*  padding: 10px 20px; */
+    outline: none;
+
+  }
+
+  #auth .form_inp label {
+    text-align: center;
+    flex: 10%;
+    color: var(--primary_color);
+    font-weight: 500;
+  }
+
+  #auth .form_inp input:placeholder {
+    font-size: 15px;
+  }
+
+  #auth .form_inp input:focus {
+    border: 1px solid var(--color);
+  }
+
+
+
+
+  #auth form button {
+    /* bg */
+    background-color: var(--secondary_color);
+    cursor: pointer;
+    /* end bg */
+    padding: 8px 20px 8px 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    border: none;
+    transition: all .8s;
+  }
+
+  /* form .controls{
+    justify-content: center;
+  } */
+  #auth form button:hover {
+    background-color:  var(--primary_color);
+  }
+
+  #auth .last_form_inp {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #auth .last_form_inp p a {
+    transition: all .8s;
+    font-weight: 700;
+    color: var(--secondary_color);
+  }
+
+  #auth .last_form_inp p a:hover {
+    color: var(--primary_color);
+  }
