@@ -861,7 +861,7 @@ main#access_denied{
   flex-wrap: wrap;
   min-height: 100vh;
   padding: 0px 0 10px 20px;
-  background: white;
+  background-color: #fff1f1;
   z-index: 20;
   margin-top: 10px;
   margin-bottom: 200px;

@@ -841,7 +841,7 @@ footer{
     flex-wrap: wrap;
     min-height: 100vh;
     padding: 0px 0 10px 20px;
-    background: white;
+    background-color: #fcfcfcaf;
     z-index: 20;
     margin-top: 10px;
     margin-bottom: 200px;
