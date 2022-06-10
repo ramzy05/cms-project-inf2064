@@ -1,7 +1,17 @@
 <?php require_once("./includes/head.php"); ?>
 
 <!-- header section -->
-<?php require_once("./includes/header.php"); ?>
+<?php require_once("./includes/header.php");
+if (isset($_SESSION['rang']) && $_SESSION['rang'] == 0) {
+
+  header('Location: ../403.php');
+  die;
+} else if (!isset($_SESSION['username'])) {
+
+  header('Location: ../login.php');
+  die;
+}
+?>
 <!-- end header section -->
 
 

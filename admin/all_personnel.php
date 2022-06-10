@@ -7,6 +7,11 @@
 if (isset($_SESSION['rang']) && $_SESSION['rang'] == 0) {
 
   header('Location: ../403.php');
+  die;
+} else if (!isset($_SESSION['username'])) {
+
+  header('Location: ../login.php');
+  die;
 }
 ?>
 <!-- main  -->
