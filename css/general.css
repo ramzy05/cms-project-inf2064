@@ -137,7 +137,7 @@ nav{
 }
 .logo_cont .nom_mairie{
   color: var(--secondary_color);
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 img.logo{
   width: 40px;
