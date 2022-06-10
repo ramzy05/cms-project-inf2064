@@ -3,7 +3,12 @@
 <!-- header section -->
 <?php require_once("./includes/header.php"); ?>
 <!-- end header section -->
+<?php
+if (isset($_SESSION['rang']) && $_SESSION['rang'] == 0) {
 
+  header('Location: ../403.php');
+}
+?>
 <!-- main  -->
 <main>
 

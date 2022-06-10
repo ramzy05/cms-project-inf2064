@@ -690,7 +690,6 @@ footer{
   
   
   main#auth {
-    --color: #497E91;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -834,3 +833,35 @@ footer{
   #auth .last_form_inp p a:hover {
     color: var(--primary_color);
   }
+
+  main#access_denied{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding: 0px 0 10px 20px;
+    background: white;
+    z-index: 20;
+    margin-top: 10px;
+    margin-bottom: 200px;
+  }
+
+  
+  #access_denied .code{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#access_denied .code p:nth-child(1){
+  color: var(--secondary_color);
+  font-size: 10rem;
+  letter-spacing: .9px;
+} 
+
+#access_denied .code p:nth-child(2){
+  font-size: 1.9rem;
+  color: var(--primary_color);
+}

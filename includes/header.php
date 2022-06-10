@@ -26,18 +26,22 @@ $row = mysqli_fetch_assoc($result);
       </div>
       <li class="links"><a href="./projet.php">Projets</a></li>
       <li class="links"><a href="./actualite.php">Actualités</a></li>
-      <div class="dropdown">
-        <a class="dropbtn links_drop">Annonces</a>
-        <div class="dropdown-content">
-          <li><a href="./annonce.php#mariage">Mariages</a></li>
-          <li><a href="./annonce.php#decret">Décrets</a></li>
-          <li><a href="./annonce.php#marche_p">Marchés publiques</a></li>
-        </div>
-      </div>
       <li class="links"><a href="./tourisme.php">Tourisme</a></li>
-      <li class="links"><a href="./publicite.php">Publicités</a></li>
+      <?php
+      if (isset($_SESSION['rang']) && $_SESSION['rang'] != 0) {
+
+        echo '<li class="links"><a href="./admin/">Admin</a></li>';
+      } ?>
     </ul>
-    <button><a href="./admin">Admin</a></button>
+    <?php
+    if (isset($_SESSION['username'])) {
+      echo '<button><a href="./logout.php">Logout</a></button>';
+    } else {
+
+      echo '<button><a href="./login.php">Login</a></button>';
+    }
+    ?>
+
     <!--  <div id="sign_in_up_container">
         <button><a href="">Sign up</a></button>
       </div> -->

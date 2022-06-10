@@ -25,6 +25,9 @@
           $passwordErr = true;
         } else {
           $success = true;
+          /* let's save id session */
+          $_SESSION['username'] = $row['username'];
+          $_SESSION['rang'] = $row['rang'];
         }
       } else {
         $userNotFound = true;
@@ -42,12 +45,12 @@
 
           echo '<p style="color:rgb(241, 97, 97);">Mot de passe incorrect</p>';
         } else if ($success) {
-          echo '<p style="color:rgb(15, 170, 85);">connexion reussi</p>';
+          echo '<p style="color:rgb(15, 170, 85);">connexion reussie</p>';
           echo ("
                 <script>
                   setTimeout(()=>{
     
-                    window.location.href = './admin/';
+                    window.location.href = './';
                 
                   }, 1500);
                 </script>
